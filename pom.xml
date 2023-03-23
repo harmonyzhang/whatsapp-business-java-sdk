@@ -22,13 +22,15 @@
     <developers>
         <developer>
             <email>harmonylaozhang@gmail.com</email>
-            <name>Mauricio Binda</name>
+            <name>Lao Zhang</name>
             <url>https://github.com/harmonyzhang</url>
             <id>harmonyzhang</id>
         </developer>
     </developers>
 
     <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <com.squareup.retrofit2.version>2.9.0</com.squareup.retrofit2.version>
         <org.mockito.version>4.5.0</org.mockito.version>
