@@ -6,52 +6,52 @@ You can:
 
 See the examples:
 
-#### [Get a phone number data list:](https://github.com/harmonyzhang/whatsapp-business-java-api/blob/main/src/test/java/com/whatsapp/api/examples/RetrievePhoneNumberExample.java)
+#### [Get a phone number data list:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/RetrievePhoneNumberExample.java)
 
 ```java
-        WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
+WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
+WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
-        var phoneNumbers = whatsappBusinessManagementApi.retrievePhoneNumbers(TestConstants.WABA_ID);
+var phoneNumbers = whatsappBusinessManagementApi.retrievePhoneNumbers(TestConstants.WABA_ID);
 
-        ObjectMapper mapper = new ObjectMapper();
+ObjectMapper mapper = new ObjectMapper();
 
-        System.out.println(mapper.writeValueAsString(phoneNumbers));
+System.out.println(mapper.writeValueAsString(phoneNumbers));
 ```
 
 ---
 
-#### [Get a phone number data by id:](https://github.com/harmonyzhang/whatsapp-business-java-api/blob/main/src/test/java/com/whatsapp/api/examples/RetrievePhoneNumberExample.java)
+#### [Get a phone number data by id:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/RetrievePhoneNumberExample.java)
 
 ```java
-        WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
+WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
-        
-        var phoneNumber = whatsappBusinessManagementApi.retrievePhoneNumber(TestConstants.PHONE_NUMBER_ID);
+WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
-        ObjectMapper mapper = new ObjectMapper();
+var phoneNumber = whatsappBusinessManagementApi.retrievePhoneNumber(TestConstants.PHONE_NUMBER_ID);
 
-        System.out.println(mapper.writeValueAsString(phoneNumber));
+ObjectMapper mapper = new ObjectMapper();
+
+System.out.println(mapper.writeValueAsString(phoneNumber));
 ```
 
 ---
 
-#### [Get a phone number data with specific fields:](https://github.com/harmonyzhang/whatsapp-business-java-api/blob/main/src/test/java/com/whatsapp/api/examples/RetrievePhoneNumberExample.java)
+#### [Get a phone number data with specific fields:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/RetrievePhoneNumberExample.java)
 
 ```java
-        WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
+WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
+WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
-        var phoneNumber = whatsappBusinessManagementApi.retrievePhoneNumber(TestConstants.PHONE_NUMBER_ID, "name_status", "verified_name");
+var phoneNumber = whatsappBusinessManagementApi.retrievePhoneNumber(TestConstants.PHONE_NUMBER_ID, "name_status", "verified_name");
 
-        ObjectMapper mapper = new ObjectMapper();
+ObjectMapper mapper = new ObjectMapper();
 
-        System.out.println(mapper.writeValueAsString(phoneNumber));
+System.out.println(mapper.writeValueAsString(phoneNumber));
 ```
 ---
-See full examples [here](https://github.com/harmonyzhang/whatsapp-business-java-api/blob/main/src/test/java/com/whatsapp/api/examples/RetrievePhoneNumberExample.java)
+See full examples [here](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/RetrievePhoneNumberExample.java)
 
 [:arrow_heading_up: back](../README.md#link-links)
