@@ -27,6 +27,6 @@ jobs:
           java-version: '1.8'
           architecture: x64
       - name: Publish package
-        run: mvn --batch-mode deploy
+        run: mvn --batch-mode deploy -X
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
