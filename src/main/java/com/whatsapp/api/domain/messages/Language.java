@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
- * @param code Language code. See {@link LanguageType}
+ * Language code
  */
 @AllArgsConstructor
 @Data

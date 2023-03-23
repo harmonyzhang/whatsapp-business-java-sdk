@@ -5,12 +5,6 @@ import lombok.Data;
 
 /**
  * When messages type is set to document, this object is included in the messages object.
- *
- * @param filename Name for the file on the sender's device
- * @param mimeType Mime type of the document file
- * @param sha256   Hash
- * @param id       ID for the document
- * @param caption  Caption for the document, if provided
  */
 @Data
 public class Document {

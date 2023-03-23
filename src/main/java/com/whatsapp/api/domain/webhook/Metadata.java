@@ -5,9 +5,6 @@ import lombok.Data;
 
 /**
  * The type Metadata.
- *
- * @param phoneNumberId      The ID of the phone number receiving the Webhooks. You can use this phone_number_id to send messages back to customers.
- * @param displayPhoneNumber The phone number of the business account that is receiving the Webhooks.
  */
 @Data
 public class Metadata{

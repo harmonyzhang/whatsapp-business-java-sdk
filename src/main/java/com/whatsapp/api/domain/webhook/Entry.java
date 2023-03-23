@@ -7,10 +7,6 @@ import java.util.List;
 
 /**
  * Generic webhook class wrapper. All Webhooks messages have this.
- *
- * @param changes Changes that triggered the Webhooks call. This field contains an array of change objects.
- * @param id      The ID of Whatsapp Business Accounts this Webhook belongs to.
- * @param time    Time for the entry. (WhatsApp Business Management API)
  */
 @Data
 public class Entry {

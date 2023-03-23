@@ -7,9 +7,6 @@ import java.util.List;
 
 /**
  * The type Contact.
- *
- * @param profile The {@link Profile} object.
- * @param waId    The WhatsApp ID of the customer. You can send messages using this wa_id.
  */
 @Data
 public class Contact {

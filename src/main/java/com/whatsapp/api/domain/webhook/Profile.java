@@ -5,8 +5,6 @@ import lombok.Data;
 
 /**
  * Optional.
- *
- * @param name Specifies the sender's profile name.
  */
 @Data
 public class Profile{

@@ -34,7 +34,7 @@ public class Formatter {
      * Strikethrough string.
      *
      * @param text String
-     * @return strikethrough text. Example: <s>"strikethrough text"</s>
+     * @return strikethrough text. Example: "strikethrough text"
      */
     public static String strikethrough(String text) {
         String strikethrough = "~";

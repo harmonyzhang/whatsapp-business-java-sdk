@@ -8,9 +8,6 @@ import lombok.Data;
 
 /**
  * The type Request code.
- *
- * @param codeMethod Required. Specifies the method for verification. Supported options are: SMS or VOICE.
- * @param language   Required. Specifies your locale.
  */
 @AllArgsConstructor
 @Data

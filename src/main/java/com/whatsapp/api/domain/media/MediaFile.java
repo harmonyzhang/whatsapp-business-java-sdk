@@ -4,8 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
- * @param fileName file name
- * @param content  file content
+ * MediaFile
  */
 @AllArgsConstructor
 @Data

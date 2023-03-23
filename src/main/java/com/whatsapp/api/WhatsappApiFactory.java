@@ -27,7 +27,7 @@ public class WhatsappApiFactory {
 
     /**
      * Creates a new synchronous/blocking Whatsapp business cloud api client
-     * @param token
+     * @param token the token
      * @return the whatsapp business cloud api
      */
     public WhatsappBusinessCloudApi newBusinessCloudApi(String token) {
@@ -37,7 +37,7 @@ public class WhatsappApiFactory {
 
     /**
      * Creates a new synchronous/blocking Whatsapp business management api client
-     * @param token
+     * @param token the token
      * @return the whatsapp business management api
      */
     public WhatsappBusinessManagementApi newBusinessManagementApi(String token) {

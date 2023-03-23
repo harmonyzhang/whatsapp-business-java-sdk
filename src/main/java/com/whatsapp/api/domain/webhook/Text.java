@@ -5,8 +5,6 @@ import lombok.Data;
 
 /**
  * The type Text.
- *
- * @param body The text of the text message.
  */
 @Data
 public class Text {

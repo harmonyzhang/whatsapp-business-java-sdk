@@ -24,7 +24,7 @@ import java.util.List;
  *
  *  <li> <b>product_retailer_id</b> - Required for Single Product Messages and Multi-Product Messages - Unique identifier of the product in a catalog.
  *      <p> To get this ID go to Meta Commerce Manager and select your Meta Business account. You will see a list of shops connected to your account.
- *      Click the shop you want to use. On the left-side panel, click Catalog > Items, and find the item you want to mention.
+ *      Click the shop you want to use. On the left-side panel, click Catalog &gt; Items, and find the item you want to mention.
  *      The ID for that item is displayed under the item's name.</li>
  *
  *  <li> <b>sections</b> - Required for List Messages and Multi-Product Messages - Array of section objects. Minimum of 1, maximum of 10. See section object.</li>

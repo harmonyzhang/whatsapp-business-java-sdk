@@ -5,10 +5,6 @@ import lombok.Data;
 
 /**
  * The type Sticker.
- *
- * @param sha256   The checksum of the media.
- * @param mimeType The mime type of the media.                 The caption that describes the media.
- * @param id       The ID of the medi
  */
 @Data
 public class Sticker{

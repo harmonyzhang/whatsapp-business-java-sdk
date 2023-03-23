@@ -5,9 +5,6 @@ import lombok.Data;
 
 /**
  * The type Reaction.
- *
- * @param emoji     The emoji used for the reaction.
- * @param messageId Specifies the wamid of the message received that contained the reaction.
  */
 @Data
 public class Reaction {

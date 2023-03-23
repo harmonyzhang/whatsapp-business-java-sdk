@@ -8,9 +8,6 @@ import java.util.List;
 
 /**
  * The Object with PhoneNumbers
- *
- * @param data   an objetc with a PhoneNumber list
- * @param paging paging
  */
 @Data
 public class PhoneNumbers {
