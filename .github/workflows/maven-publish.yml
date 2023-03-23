@@ -19,8 +19,8 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-java@v3
         with:
-          java-version: '8'
-          distribution: 'temurin'
+          java-version: '1.8'
+          distribution: 'oracle'
       - name: Publish package
         run: mvn --batch-mode deploy
         env:
