@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-java@v3
         with:
-          distribution: '<distribution>'
+          distribution: 'custom-jdk'
           java-version: '1.8'
           java-package: jdk # optional (jdk or jre) - defaults to jdk
       - name: Publish package
