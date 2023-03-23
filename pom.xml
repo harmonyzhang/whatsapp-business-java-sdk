@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.github.harmonyzhang</groupId>
+    <groupId>com.github.harmonyzhang</groupId>
     <artifactId>whatsapp-business-java-sdk</artifactId>
     <version>v0.1.0</version>
     <licenses>
@@ -44,7 +44,7 @@
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/harmonyzhang/whatsapp-business-java-api</url>
+            <url>https://maven.pkg.github.com/harmonyzhang/whatsapp-business-java-sdk</url>
         </repository>
     </distributionManagement>
 
