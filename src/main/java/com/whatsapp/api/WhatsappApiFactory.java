@@ -1,0 +1,57 @@
+package com.whatsapp.api;
+
+
+import com.whatsapp.api.impl.WhatsappBusinessCloudApi;
+import com.whatsapp.api.impl.WhatsappBusinessManagementApi;
+import com.whatsapp.api.impl.WhatsappEngagelabApi;
+
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
+
+/**
+ * A factory for creating Whatsapp api client objects.
+ */
+public class WhatsappApiFactory {
+
+    private WhatsappApiFactory() {
+    }
+
+    /**
+     * New instance whatsapp api factory.
+     *
+     * @return the whatsapp api factory
+     */
+    public static WhatsappApiFactory newInstance() {
+        return new WhatsappApiFactory();
+    }
+
+    /**
+     * Creates a new synchronous/blocking Whatsapp business cloud api client
+     *
+     * @return the whatsapp business cloud api
+     */
+    public WhatsappBusinessCloudApi newBusinessCloudApi(String token) {
+
+        return new WhatsappBusinessCloudApi(token);
+    }
+
+    /**
+     * Creates a new synchronous/blocking Whatsapp business management api client
+     *
+     * @return the whatsapp business management api
+     */
+    public WhatsappBusinessManagementApi newBusinessManagementApi(String token) {
+        return new WhatsappBusinessManagementApi(token);
+    }
+
+    /**
+     * Creates a new synchronous/blocking Whatsapp business cloud api client
+     *
+     * @return the whatsapp business cloud api
+     */
+    public WhatsappEngagelabApi newEngagelabApi(String devKey, String devSecret) {
+
+        return new WhatsappEngagelabApi(Base64.getEncoder().encodeToString((devKey + ":" + devSecret).getBytes(StandardCharsets.UTF_8)));
+    }
+
+}
