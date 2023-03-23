@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.harmonyzhang</groupId>
-    <artifactId>whatsapp-business-java-api</artifactId>
+    <artifactId>whatsapp-business-java-sdk</artifactId>
     <version>v0.1.0</version>
     <licenses>
         <license>

@@ -79,7 +79,7 @@ This sdk implements engagelab whatsapp API version v1.
 
 ```xml
 <dependency>
-  <groupId>com.github.harmonyzhang</groupId>
+  <groupId>io.github.harmonyzhang</groupId>
   <artifactId>whatsapp-business-java-sdk</artifactId>
   <version>v0.1.1</version>
 </dependency> 
