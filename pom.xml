@@ -15,8 +15,8 @@
 
     <name>whatsapp-business-sdk</name>
     <url>https://github.com/harmonyzhang/whatsapp-business-java-sdk</url>
-    <description>Whatsapp business api SDK, written in java. This SDK implements the Official Whatsapp Cloud API and WhatsApp Business Management API
-        and Engagelab Whatsapp API.
+    <description>
+        Whatsapp business api SDK, written in java. This SDK implements the Official Whatsapp Cloud API and WhatsApp Business Management API and Engagelab Whatsapp API.
     </description>
 
     <developers>
