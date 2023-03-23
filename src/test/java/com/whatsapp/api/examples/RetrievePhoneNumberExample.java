@@ -2,14 +2,12 @@ package com.whatsapp.api.examples;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.whatsapp.api.TestConstants;
 import com.whatsapp.api.WhatsappApiFactory;
 import com.whatsapp.api.domain.phone.PhoneNumber;
 import com.whatsapp.api.domain.phone.PhoneNumbers;
 import com.whatsapp.api.impl.WhatsappBusinessManagementApi;
 
-import static com.whatsapp.api.TestConstants.PHONE_NUMBER_ID;
-import static com.whatsapp.api.TestConstants.TOKEN;
-import static com.whatsapp.api.TestConstants.WABA_ID;
 
 public class RetrievePhoneNumberExample {
 
@@ -17,7 +15,7 @@ public class RetrievePhoneNumberExample {
 
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
         // one phone number
         retrieveOne(whatsappBusinessManagementApi);
@@ -31,7 +29,7 @@ public class RetrievePhoneNumberExample {
     }
 
     private static void retrieveOne(WhatsappBusinessManagementApi whatsappBusinessManagementApi) throws JsonProcessingException {
-        PhoneNumber phoneNumber = whatsappBusinessManagementApi.retrievePhoneNumber(PHONE_NUMBER_ID);
+        PhoneNumber phoneNumber = whatsappBusinessManagementApi.retrievePhoneNumber(TestConstants.PHONE_NUMBER_ID);
 
         ObjectMapper mapper = new ObjectMapper();
 
@@ -40,7 +38,7 @@ public class RetrievePhoneNumberExample {
 
     private static void retrieveOneWithSpecificFields(WhatsappBusinessManagementApi whatsappBusinessManagementApi) throws JsonProcessingException {
 
-        PhoneNumber phoneNumber = whatsappBusinessManagementApi.retrievePhoneNumber(PHONE_NUMBER_ID, "name_status", "verified_name");
+        PhoneNumber phoneNumber = whatsappBusinessManagementApi.retrievePhoneNumber(TestConstants.PHONE_NUMBER_ID, "name_status", "verified_name");
 
         ObjectMapper mapper = new ObjectMapper();
 
@@ -50,7 +48,7 @@ public class RetrievePhoneNumberExample {
 
     private static void retrieveAll(WhatsappBusinessManagementApi whatsappBusinessManagementApi) throws JsonProcessingException {
 
-        PhoneNumbers phoneNumbers = whatsappBusinessManagementApi.retrievePhoneNumbers(WABA_ID);
+        PhoneNumbers phoneNumbers = whatsappBusinessManagementApi.retrievePhoneNumbers(TestConstants.WABA_ID);
 
         ObjectMapper mapper = new ObjectMapper();
 

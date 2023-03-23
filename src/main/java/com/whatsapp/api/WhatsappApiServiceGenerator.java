@@ -7,11 +7,9 @@ import com.whatsapp.api.domain.media.MediaFile;
 import com.whatsapp.api.exception.WhatsappApiException;
 import com.whatsapp.api.interceptor.AuthenticationInterceptor;
 import com.whatsapp.api.interceptor.BasicAuthenticationInterceptor;
-import com.whatsapp.api.service.WhatsappEngagelabApiService;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
-import okhttp3.internal.platform.Platform;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Converter;
@@ -52,8 +50,8 @@ public class WhatsappApiServiceGenerator {
      *
      * @param <S>          the type parameter
      * @param serviceClass the service class
-     * @param token        the token
      * @param baseUrl      the base url
+     * @param interceptor the interceptor
      * @return the s
      */
     private static <S> S createServiceBase(Class<S> serviceClass, String baseUrl, Interceptor interceptor) {

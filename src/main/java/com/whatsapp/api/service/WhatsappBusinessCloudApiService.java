@@ -1,6 +1,7 @@
 package com.whatsapp.api.service;
 
 
+import com.whatsapp.api.configuration.WhatsappApiConfig;
 import com.whatsapp.api.domain.media.Media;
 import com.whatsapp.api.domain.media.UploadResponse;
 import com.whatsapp.api.domain.messages.Message;
@@ -36,7 +37,7 @@ public interface WhatsappBusinessCloudApiService {
      * @param message       the message
      * @return the call
      */
-    @POST("/" + API_VERSION + "/{Phone-Number-ID}/messages")
+    @POST("/" + WhatsappApiConfig.API_VERSION + "/{Phone-Number-ID}/messages")
     Call<MessageResponse> sendMessage(@Path("Phone-Number-ID") String phoneNumberId, @Body Message message);
 
     /**
@@ -48,7 +49,7 @@ public interface WhatsappBusinessCloudApiService {
      * @return the call
      */
     @Multipart
-    @POST("/" + API_VERSION + "/{Phone-Number-ID}/media")
+    @POST("/" + WhatsappApiConfig.API_VERSION + "/{Phone-Number-ID}/media")
     Call<UploadResponse> uploadMedia(@Path("Phone-Number-ID") String phoneNumberId, @Part MultipartBody.Part file, @Part MultipartBody.Part messageProduct);
 
     /**
@@ -57,7 +58,7 @@ public interface WhatsappBusinessCloudApiService {
      * @param mediaId the media id
      * @return the call
      */
-    @GET("/" + API_VERSION + "/{media-id}")
+    @GET("/" + WhatsappApiConfig.API_VERSION + "/{media-id}")
     Call<Media> retrieveMediaUrl(@Path("media-id") String mediaId);
 
 
@@ -78,7 +79,7 @@ public interface WhatsappBusinessCloudApiService {
      * @param mediaId the media id
      * @return the call
      */
-    @DELETE("/" + API_VERSION + "/{media-id}")
+    @DELETE("/" + WhatsappApiConfig.API_VERSION + "/{media-id}")
     Call<Response> deleteMedia(@Path("media-id") String mediaId);
 
 }

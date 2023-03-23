@@ -1,5 +1,6 @@
 package com.whatsapp.api.examples;
 
+import com.whatsapp.api.TestConstants;
 import com.whatsapp.api.WhatsappApiFactory;
 import com.whatsapp.api.domain.messages.DocumentMessage;
 import com.whatsapp.api.domain.messages.Message;
@@ -7,9 +8,7 @@ import com.whatsapp.api.domain.messages.Message.MessageBuilder;
 import com.whatsapp.api.domain.messages.response.MessageResponse;
 import com.whatsapp.api.impl.WhatsappBusinessCloudApi;
 
-import static com.whatsapp.api.TestConstants.PHONE_NUMBER_1;
 import static com.whatsapp.api.TestConstants.PHONE_NUMBER_ID;
-import static com.whatsapp.api.TestConstants.TOKEN;
 
 
 public class SendDocumentMessageExample {
@@ -19,7 +18,7 @@ public class SendDocumentMessageExample {
 
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 
         DocumentMessage documentMessage = new DocumentMessage()//
                 .setId("1238834210396519")// media id (uploaded before)
@@ -27,11 +26,11 @@ public class SendDocumentMessageExample {
                 .setFileName("Media oject.pdf");
 
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildDocumentMessage(documentMessage);
 
 
-        MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
         System.out.println(messageResponse);
 

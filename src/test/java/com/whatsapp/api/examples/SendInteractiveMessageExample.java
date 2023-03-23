@@ -19,7 +19,7 @@ public class SendInteractiveMessageExample {
 
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 
         productMessage(whatsappBusinessCloudApi);
 
@@ -33,7 +33,7 @@ public class SendInteractiveMessageExample {
 
     private static void multiProductMessage(WhatsappBusinessCloudApi whatsappBusinessCloudApi) {
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildInteractiveMessage(InteractiveMessage.build() //
                         .setAction(new Action() //
                                 .setCatalogId("1") //
@@ -59,14 +59,14 @@ public class SendInteractiveMessageExample {
                                 .setText("Body message")) //
                 );
 
-        MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
         System.out.println(messageResponse);
     }
 
     private static void productMessage(WhatsappBusinessCloudApi whatsappBusinessCloudApi) {
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildInteractiveMessage(InteractiveMessage.build() //
                         .setAction(new Action() //
                                 .setCatalogId("1") //
@@ -76,14 +76,14 @@ public class SendInteractiveMessageExample {
                                 .setText("Body message")) //
                 );
 
-        MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
         System.out.println(messageResponse);
     }
 
     private static void buttonMessage(WhatsappBusinessCloudApi whatsappBusinessCloudApi) {
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildInteractiveMessage(InteractiveMessage.build() //
                         .setAction(new Action() //
                                 .addButton(new Button() //
@@ -102,14 +102,14 @@ public class SendInteractiveMessageExample {
                                 .setText("Body message")) //
                 );
 
-        MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
         System.out.println(messageResponse);
     }
 
     private static void listMessage(WhatsappBusinessCloudApi whatsappBusinessCloudApi) {
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildInteractiveMessage(InteractiveMessage.build() //
                         .setAction(new Action() //
                                 .setButtonText("BUTTON_TEXT") //
@@ -154,7 +154,7 @@ public class SendInteractiveMessageExample {
                                 .setText("Footer Text")) //
                 );
 
-        MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
         System.out.println(messageResponse);
     }

@@ -3,6 +3,7 @@ package com.whatsapp.api.impl;
 import com.whatsapp.api.MockServerUtilsTest;
 import com.whatsapp.api.TestConstants;
 import com.whatsapp.api.WhatsappApiFactory;
+import com.whatsapp.api.configuration.WhatsappApiConfig;
 import com.whatsapp.api.domain.media.FileType;
 import com.whatsapp.api.domain.media.Media;
 import com.whatsapp.api.domain.media.MediaFile;
@@ -24,8 +25,6 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 import static com.whatsapp.api.TestConstants.PHONE_NUMBER_1;
-import static com.whatsapp.api.TestConstants.PHONE_NUMBER_ID;
-import static com.whatsapp.api.configuration.WhatsappApiConfig.API_VERSION;
 
 public class WhatsappBusinessCloudApiTest extends MockServerUtilsTest {
     @Test
@@ -48,17 +47,17 @@ public class WhatsappBusinessCloudApiTest extends MockServerUtilsTest {
 
         WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildTextMessage(new TextMessage()//
                         .setBody(Formatter.bold("Hello world!") + "\nSome code here: \n" + Formatter.code("hello world code here"))//
                         .setPreviewUrl(false));
 
 
-        WhatsappApiException ex = Assertions.assertThrows(WhatsappApiException.class, () -> whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message));
+        WhatsappApiException ex = Assertions.assertThrows(WhatsappApiException.class, () -> whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message));
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("POST", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + API_VERSION + "/" + PHONE_NUMBER_ID + "/messages", recordedRequest.getPath());
+        Assertions.assertEquals("/" + WhatsappApiConfig.API_VERSION + "/" + TestConstants.PHONE_NUMBER_ID + "/messages", recordedRequest.getPath());
 
         Assertions.assertEquals(String.format("{\"messaging_product\":\"whatsapp\",\"recipient_type\":\"individual\",\"to\":\"%s\",\"type\":\"text\",\"text\":{\"preview_url\":false,\"body\":\"*Hello world!*\\nSome code here: \\n```hello world code here```\"}}", PHONE_NUMBER_1), recordedRequest.getBody().readUtf8());
 
@@ -74,17 +73,17 @@ public class WhatsappBusinessCloudApiTest extends MockServerUtilsTest {
 
         WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildTextMessage(new TextMessage()//
                         .setBody(Formatter.bold("Hello world!") + "\nSome code here: \n" + Formatter.code("hello world code here"))//
                         .setPreviewUrl(false));
 
 
-        MessageResponse response = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        MessageResponse response = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("POST", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + API_VERSION + "/" + PHONE_NUMBER_ID + "/messages", recordedRequest.getPath());
+        Assertions.assertEquals("/" + WhatsappApiConfig.API_VERSION + "/" + TestConstants.PHONE_NUMBER_ID + "/messages", recordedRequest.getPath());
 
         Assertions.assertEquals(String.format("{\"messaging_product\":\"whatsapp\",\"recipient_type\":\"individual\",\"to\":\"%s\",\"type\":\"text\",\"text\":{\"preview_url\":false,\"body\":\"*Hello world!*\\nSome code here: \\n```hello world code here```\"}}", PHONE_NUMBER_1), recordedRequest.getBody().readUtf8());
 
@@ -113,11 +112,11 @@ public class WhatsappBusinessCloudApiTest extends MockServerUtilsTest {
                 .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildTemplateMessage(templateMessage);
 
-        whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("POST", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + API_VERSION + "/" + PHONE_NUMBER_ID + "/messages", recordedRequest.getPath());
+        Assertions.assertEquals("/" + WhatsappApiConfig.API_VERSION + "/" + TestConstants.PHONE_NUMBER_ID + "/messages", recordedRequest.getPath());
 
         String expectedBody = "{\"messaging_product\":\"whatsapp\",\"recipient_type\":\"individual\",\"to\":\"%s\",\"type\":\"template\",\"template\":{\"components\":[{\"type\":\"BODY\",\"parameters\":[{\"type\":\"text\",\"text\":\"18754269072\"}]}],\"name\":\"number_confirmation\",\"language\":{\"code\":\"pt_BR\"}}}";
 
@@ -134,16 +133,16 @@ public class WhatsappBusinessCloudApiTest extends MockServerUtilsTest {
 
         WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildAudioMessage(new AudioMessage()//
                         .setId("4545454545454"));
 
 
-        MessageResponse response = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        MessageResponse response = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("POST", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + API_VERSION + "/" + PHONE_NUMBER_ID + "/messages", recordedRequest.getPath());
+        Assertions.assertEquals("/" + WhatsappApiConfig.API_VERSION + "/" + TestConstants.PHONE_NUMBER_ID + "/messages", recordedRequest.getPath());
 
         Assertions.assertEquals(String.format("{\"messaging_product\":\"whatsapp\",\"recipient_type\":\"individual\",\"to\":\"%s\",\"type\":\"audio\",\"audio\":{\"id\":\"4545454545454\"}}", PHONE_NUMBER_1), recordedRequest.getBody().readUtf8());
 
@@ -159,16 +158,16 @@ public class WhatsappBusinessCloudApiTest extends MockServerUtilsTest {
         WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
         String link = "https://testeteste778787878.com/audio.mp3";
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildAudioMessage(new AudioMessage()//
                         .setLink(link));
 
 
-        MessageResponse response = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        MessageResponse response = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("POST", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + API_VERSION + "/" + PHONE_NUMBER_ID + "/messages", recordedRequest.getPath());
+        Assertions.assertEquals("/" + WhatsappApiConfig.API_VERSION + "/" + TestConstants.PHONE_NUMBER_ID + "/messages", recordedRequest.getPath());
 
         Assertions.assertEquals(String.format("{\"messaging_product\":\"whatsapp\",\"recipient_type\":\"individual\",\"to\":\"%s\",\"type\":\"audio\",\"audio\":{\"link\":\"%s\"}}", PHONE_NUMBER_1, link), recordedRequest.getBody().readUtf8());
 
@@ -184,17 +183,17 @@ public class WhatsappBusinessCloudApiTest extends MockServerUtilsTest {
         WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildVideoMessage(new VideoMessage()//
                         .setId("78795489879879554")//
                         .setCaption("See the video"));
 
 
-        MessageResponse response = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        MessageResponse response = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("POST", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + API_VERSION + "/" + PHONE_NUMBER_ID + "/messages", recordedRequest.getPath());
+        Assertions.assertEquals("/" + WhatsappApiConfig.API_VERSION + "/" + TestConstants.PHONE_NUMBER_ID + "/messages", recordedRequest.getPath());
 
 
         Assertions.assertEquals(String.format("{\"messaging_product\":\"whatsapp\",\"recipient_type\":\"individual\",\"to\":\"%s\",\"type\":\"video\",\"video\":{\"id\":\"78795489879879554\",\"caption\":\"See the video\"}}", PHONE_NUMBER_1), recordedRequest.getBody().readUtf8());
@@ -211,17 +210,17 @@ public class WhatsappBusinessCloudApiTest extends MockServerUtilsTest {
         WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildImageMessage(new ImageMessage()//
                         .setId("75457812459735784")//
                         .setCaption("See the image"));
 
 
-        MessageResponse response = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        MessageResponse response = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("POST", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + API_VERSION + "/" + PHONE_NUMBER_ID + "/messages", recordedRequest.getPath());
+        Assertions.assertEquals("/" + WhatsappApiConfig.API_VERSION + "/" + TestConstants.PHONE_NUMBER_ID + "/messages", recordedRequest.getPath());
 
 
         Assertions.assertEquals(String.format("{\"messaging_product\":\"whatsapp\",\"recipient_type\":\"individual\",\"to\":\"%s\",\"type\":\"image\",\"image\":{\"id\":\"75457812459735784\",\"caption\":\"See the image\"}}", PHONE_NUMBER_1), recordedRequest.getBody().readUtf8());
@@ -238,17 +237,17 @@ public class WhatsappBusinessCloudApiTest extends MockServerUtilsTest {
         WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildDocumentMessage(new DocumentMessage()//
                         .setId("78548846588564")//
                         .setFileName("test.pdf").setCaption("My document"));
 
 
-        MessageResponse response = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        MessageResponse response = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("POST", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + API_VERSION + "/" + PHONE_NUMBER_ID + "/messages", recordedRequest.getPath());
+        Assertions.assertEquals("/" + WhatsappApiConfig.API_VERSION + "/" + TestConstants.PHONE_NUMBER_ID + "/messages", recordedRequest.getPath());
 
 
         Assertions.assertEquals(String.format("{\"messaging_product\":\"whatsapp\",\"recipient_type\":\"individual\",\"to\":\"%s\",\"type\":\"document\",\"document\":{\"id\":\"78548846588564\",\"caption\":\"My document\",\"filename\":\"test.pdf\"}}", PHONE_NUMBER_1), recordedRequest.getBody().readUtf8());
@@ -265,16 +264,16 @@ public class WhatsappBusinessCloudApiTest extends MockServerUtilsTest {
         WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildStickerMessage(new StickerMessage()//
                         .setId("78548846588564"));
 
 
-        MessageResponse response = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        MessageResponse response = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("POST", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + API_VERSION + "/" + PHONE_NUMBER_ID + "/messages", recordedRequest.getPath());
+        Assertions.assertEquals("/" + WhatsappApiConfig.API_VERSION + "/" + TestConstants.PHONE_NUMBER_ID + "/messages", recordedRequest.getPath());
 
 
         Assertions.assertEquals(String.format("{\"messaging_product\":\"whatsapp\",\"recipient_type\":\"individual\",\"to\":\"%s\",\"type\":\"sticker\",\"sticker\":{\"id\":\"78548846588564\"}}", PHONE_NUMBER_1), recordedRequest.getBody().readUtf8());
@@ -293,11 +292,11 @@ public class WhatsappBusinessCloudApiTest extends MockServerUtilsTest {
         byte[] fileContent = bytesFromResource("/starwars.png");
 
 
-        UploadResponse response = whatsappBusinessCloudApi.uploadMedia(PHONE_NUMBER_ID, "starwars.png", FileType.PNG, fileContent);
+        UploadResponse response = whatsappBusinessCloudApi.uploadMedia(TestConstants.PHONE_NUMBER_ID, "starwars.png", FileType.PNG, fileContent);
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("POST", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + API_VERSION + "/" + PHONE_NUMBER_ID + "/media", recordedRequest.getPath());
+        Assertions.assertEquals("/" + WhatsappApiConfig.API_VERSION + "/" + TestConstants.PHONE_NUMBER_ID + "/media", recordedRequest.getPath());
 
         Assertions.assertEquals("985569392615996", response.getId());
     }
@@ -315,7 +314,7 @@ public class WhatsappBusinessCloudApiTest extends MockServerUtilsTest {
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("GET", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + API_VERSION + "/" + "1227829768162607", recordedRequest.getPath());
+        Assertions.assertEquals("/" + WhatsappApiConfig.API_VERSION + "/" + "1227829768162607", recordedRequest.getPath());
 
         Assertions.assertEquals("1227829768162607", response.getId());
         Assertions.assertEquals(103632L, response.getFileSize());
@@ -375,7 +374,7 @@ public class WhatsappBusinessCloudApiTest extends MockServerUtilsTest {
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("DELETE", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + API_VERSION + "/" + "1227829768162607", recordedRequest.getPath());
+        Assertions.assertEquals("/" + WhatsappApiConfig.API_VERSION + "/" + "1227829768162607", recordedRequest.getPath());
 
         Assertions.assertTrue(response.isSuccess());
 

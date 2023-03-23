@@ -1,24 +1,20 @@
 package com.whatsapp.api.examples.engagelab;
 
+import com.whatsapp.api.TestConstants;
 import com.whatsapp.api.WhatsappApiFactory;
 import com.whatsapp.api.domain.response.Response;
 import com.whatsapp.api.domain.templates.*;
-import com.whatsapp.api.domain.templates.type.ButtonType;
 import com.whatsapp.api.domain.templates.type.Category;
 import com.whatsapp.api.domain.templates.type.HeaderFormat;
 import com.whatsapp.api.domain.templates.type.LanguageType;
-import com.whatsapp.api.impl.WhatsappBusinessManagementApi;
 import com.whatsapp.api.impl.WhatsappEngagelabApi;
-
-import static com.whatsapp.api.TestConstants.*;
-import static com.whatsapp.api.TestConstants.ENGAGELAB_DEV_SECRET;
 
 public class UpdateMessageTemplateExample {
 
     public static void main(String[] args) {
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappEngagelabApi whatsappEngagelabApi = factory.newEngagelabApi(ENGAGELAB_DEV_KEY, ENGAGELAB_DEV_SECRET);
+        WhatsappEngagelabApi whatsappEngagelabApi = factory.newEngagelabApi(TestConstants.ENGAGELAB_DEV_KEY,TestConstants.ENGAGELAB_DEV_SECRET);
 
         MessageTemplate template = new MessageTemplate();
 

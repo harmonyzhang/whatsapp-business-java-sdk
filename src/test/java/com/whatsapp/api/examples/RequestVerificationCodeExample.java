@@ -1,5 +1,6 @@
 package com.whatsapp.api.examples;
 
+import com.whatsapp.api.TestConstants;
 import com.whatsapp.api.WhatsappApiFactory;
 import com.whatsapp.api.domain.phone.RequestCode;
 import com.whatsapp.api.domain.phone.VerifyCode;
@@ -9,7 +10,6 @@ import com.whatsapp.api.domain.templates.type.LanguageType;
 import com.whatsapp.api.impl.WhatsappBusinessManagementApi;
 
 import static com.whatsapp.api.TestConstants.PHONE_NUMBER_ID;
-import static com.whatsapp.api.TestConstants.TOKEN;
 
 public class RequestVerificationCodeExample {
 
@@ -17,14 +17,14 @@ public class RequestVerificationCodeExample {
 
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
         //request the code
-        Response response = whatsappBusinessManagementApi.requestCode(PHONE_NUMBER_ID, new RequestCode(CodeMethodType.SMS, LanguageType.EN_US));
+        Response response = whatsappBusinessManagementApi.requestCode(TestConstants.PHONE_NUMBER_ID, new RequestCode(CodeMethodType.SMS, LanguageType.EN_US));
 
         System.out.println(response);
 
         //verify the code
-        Response response2 = whatsappBusinessManagementApi.verifyCode(PHONE_NUMBER_ID, new VerifyCode("0000"));
+        Response response2 = whatsappBusinessManagementApi.verifyCode(TestConstants.PHONE_NUMBER_ID, new VerifyCode("0000"));
 
         System.out.println(response2);
 

@@ -14,10 +14,10 @@ public class SendTemplateButtonMessageExample {
     public static void main(String[] args) {
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildTemplateMessage(//
                         new TemplateMessage()//
                                 .setLanguage(new Language(LanguageType.PT_BR))//
@@ -31,6 +31,6 @@ public class SendTemplateButtonMessageExample {
 
                 );
 
-        whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
     }
 }

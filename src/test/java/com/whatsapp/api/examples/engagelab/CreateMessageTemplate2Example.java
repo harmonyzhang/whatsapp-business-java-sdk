@@ -1,5 +1,6 @@
 package com.whatsapp.api.examples.engagelab;
 
+import com.whatsapp.api.TestConstants;
 import com.whatsapp.api.WhatsappApiFactory;
 import com.whatsapp.api.domain.templates.*;
 import com.whatsapp.api.domain.templates.response.MessageTemplateIDResponse;
@@ -18,7 +19,7 @@ public class CreateMessageTemplate2Example {
     public static void main(String[] args) {
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappEngagelabApi whatsappEngagelabApi = factory.newEngagelabApi(ENGAGELAB_DEV_KEY, ENGAGELAB_DEV_SECRET);
+        WhatsappEngagelabApi whatsappEngagelabApi = factory.newEngagelabApi(TestConstants.ENGAGELAB_DEV_KEY,TestConstants.ENGAGELAB_DEV_SECRET);
 
         MessageTemplate template = new MessageTemplate();
 

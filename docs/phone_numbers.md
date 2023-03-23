@@ -11,9 +11,9 @@ See the examples:
 ```java
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
-        var phoneNumbers = whatsappBusinessManagementApi.retrievePhoneNumbers(WABA_ID);
+        var phoneNumbers = whatsappBusinessManagementApi.retrievePhoneNumbers(TestConstants.WABA_ID);
 
         ObjectMapper mapper = new ObjectMapper();
 
@@ -27,9 +27,9 @@ See the examples:
 ```java
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
         
-        var phoneNumber = whatsappBusinessManagementApi.retrievePhoneNumber(PHONE_NUMBER_ID);
+        var phoneNumber = whatsappBusinessManagementApi.retrievePhoneNumber(TestConstants.PHONE_NUMBER_ID);
 
         ObjectMapper mapper = new ObjectMapper();
 
@@ -43,9 +43,9 @@ See the examples:
 ```java
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
-        var phoneNumber = whatsappBusinessManagementApi.retrievePhoneNumber(PHONE_NUMBER_ID, "name_status", "verified_name");
+        var phoneNumber = whatsappBusinessManagementApi.retrievePhoneNumber(TestConstants.PHONE_NUMBER_ID, "name_status", "verified_name");
 
         ObjectMapper mapper = new ObjectMapper();
 

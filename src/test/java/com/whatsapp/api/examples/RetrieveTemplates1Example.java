@@ -2,12 +2,10 @@ package com.whatsapp.api.examples;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.whatsapp.api.TestConstants;
 import com.whatsapp.api.WhatsappApiFactory;
 import com.whatsapp.api.domain.templates.response.MessageTemplates;
 import com.whatsapp.api.impl.WhatsappBusinessManagementApi;
-
-import static com.whatsapp.api.TestConstants.TOKEN;
-import static com.whatsapp.api.TestConstants.WABA_ID;
 
 public class RetrieveTemplates1Example {
 
@@ -15,9 +13,9 @@ public class RetrieveTemplates1Example {
 
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
-        MessageTemplates templates = whatsappBusinessCloudApi.retrieveTemplates(WABA_ID);
+        MessageTemplates templates = whatsappBusinessCloudApi.retrieveTemplates(TestConstants.WABA_ID);
 
         ObjectMapper mapper = new ObjectMapper();
 

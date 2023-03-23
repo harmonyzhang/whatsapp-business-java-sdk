@@ -123,7 +123,7 @@ There are two client classes that can be used to interact with the API:
 ```java
  WhatsappApiFactory factory = WhatsappApiFactory.newInstance(TestUtils.TOKEN);
 
- WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+ WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 ```
 
 2. [`WhatsappBusinessManagementApi`](https://github.com/harmonyzhang/whatsapp-business-java-api/blob/main/src/main/java/com/whatsapp/api/impl/WhatsappBusinessManagementApi.java), a synchronous/blocking [WhatsApp Business Management API](https://developers.facebook.com/docs/whatsapp/business-management-api) client;
@@ -132,7 +132,7 @@ There are two client classes that can be used to interact with the API:
 ```java
 WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TOKEN);
+WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
  ```
 
 These can be instantiated through the corresponding factory method of [`WhatsappApiFactory`](https://github.com/harmonyzhang/whatsapp-business-java-api/blob/main/src/main/java/com/whatsapp/api/WhatsappApiFactory.java), by passing the token, which can be created following the instructions at [whatsapp](https://developers.facebook.com/docs/whatsapp/cloud-api/get-started).
@@ -148,16 +148,16 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
 ```java
  	WhatsappApiFactory factory = WhatsappApiFactory.newInstance(TestUtils.TOKEN);
 
-        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 	
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildTextMessage(new TextMessage()//
                         .setBody(Formatter.bold("Hello world!") + "\nSome code here: \n" + Formatter.code("hello world code here"))//
                         .setPreviewUrl(false));
 
 
-        whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 ```
 
 **Result:**
@@ -172,10 +172,10 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
 ```java
 	WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildTemplateMessage(//
                         new TemplateMessage()//
                                 .setLanguage(new Language(LanguageType.PT_BR))//
@@ -188,7 +188,7 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
 
                 );
 
-        whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 ```
 
 **Result:**
@@ -203,13 +203,13 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
 ```java
  	WhatsappApiFactory factory = WhatsappApiFactory.newInstance(TestUtils.TOKEN);
 
-        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildContactMessage(new ContactMessage()//
                         .addContacts(new ContactsItem()//
                                 .addPhones(new PhonesItem()//
-                                        .setPhone(PHONE_NUMBER_1)//
+                                        .setPhone(TestConstants.PHONE_NUMBER_1)//
                                         .setType(AddressType.HOME))//
                                 .setName(new Name()//
                                         .setFormattedName("Mauricio Binda")//
@@ -217,7 +217,7 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
                         ));
 
 
-        whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 ```
 
 **Result:**
@@ -233,10 +233,10 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
 ```java
  	WhatsappApiFactory factory = WhatsappApiFactory.newInstance(TestUtils.TOKEN);
 
-        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 	
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildInteractiveMessage(InteractiveMessage.build() //
                         .setAction(new Action() //
                                 .addButton(new Button() //
@@ -255,7 +255,7 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
                                 .setText("Body message")) //
                 );
 
-        MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
         System.out.println(messageResponse);
 ```
@@ -273,10 +273,10 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
 ```java
  	WhatsappApiFactory factory = WhatsappApiFactory.newInstance(TestUtils.TOKEN);
 
-        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 	
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildInteractiveMessage(InteractiveMessage.build() //
                         .setAction(new Action() //
                                 .setButtonText("BUTTON_TEXT") //
@@ -321,7 +321,7 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
                                 .setText("Footer Text")) //
                 );
 
-        MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
         System.out.println(messageResponse);
 ```
@@ -341,17 +341,17 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
 ```java
 		WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-		WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+		WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 
 		var audioMessage = new AudioMessage()//
 		.setId("6418001414900549");
 
 		Message message = MessageBuilder.builder()//
-		.setTo(PHONE_NUMBER_1)//
+		.setTo(TestConstants.PHONE_NUMBER_1)//
 		.buildAudioMessage(audioMessage);
 
 
-		MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+		MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 ```
 
 **Result:**
@@ -368,7 +368,7 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
 
 		WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-		WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+		WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 
 		var documentMessage = new DocumentMessage()//
 		.setId("1238834210396519")// media id (uploaded before)
@@ -376,11 +376,11 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
 		.setFileName("Media oject.pdf");
 
 		Message message = MessageBuilder.builder()//
-		.setTo(PHONE_NUMBER_1)//
+		.setTo(TestConstants.PHONE_NUMBER_1)//
 		.buildDocumentMessage(documentMessage);
 
 
-		MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+		MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 ```
 
 **Result:**
@@ -397,17 +397,17 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
 ```java
 		WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-		WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+		WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 
 		var imageMessage = new ImageMessage()//
 		.setLink("https://upload.wikimedia.org/wikipedia/pt/4/45/Yoda.jpg").setCaption("See this image, please");
 
 		Message message = MessageBuilder.builder()//
-		.setTo(PHONE_NUMBER_1)//
+		.setTo(TestConstants.PHONE_NUMBER_1)//
 		.buildImageMessage(imageMessage);
 
 
-		MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+		MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
 ```
 ![image](https://user-images.githubusercontent.com/7831956/222820971-f27cdb60-9b93-4a8f-96c3-0740bbada95b.png)
@@ -422,18 +422,18 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
 ```java
 		WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-		WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+		WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 
 		var imageMessage = new ImageMessage()//
 		.setId("186057067456357")// media id (uploaded before)
 		.setCaption("See this image, please");
 
 		Message message = MessageBuilder.builder()//
-		.setTo(PHONE_NUMBER_1)//
+		.setTo(TestConstants.PHONE_NUMBER_1)//
 		.buildImageMessage(imageMessage);
 
 
-		MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+		MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
 ```
 
@@ -451,18 +451,18 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
 ```java
 	WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 
         var stickerMessage = new StickerMessage()//
                 .setId("527984052814860");// media id (uploaded before)
 
 
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildStickerMessage(stickerMessage);
 
 
-        MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 ```
 
 **Result:**
@@ -479,7 +479,7 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
 ```java
 		WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-		WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+		WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 
 		var videoMessage = new VideoMessage()//
 		.setId("1236364143659727")// media id (uploaded before)
@@ -487,11 +487,11 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
 
 
 		Message message = MessageBuilder.builder()//
-		.setTo(PHONE_NUMBER_1)//
+		.setTo(TestConstants.PHONE_NUMBER_1)//
 		.buildVideoMessage(videoMessage);
 
 
-		MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+		MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 ```
 
 [:arrow_heading_up: back](#link-links)
@@ -505,7 +505,7 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
 ```java
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
         var template = new MessageTemplate();
 
@@ -533,7 +533,7 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
 
         ;
 
-        var response = whatsappBusinessCloudApi.createMessageTemplate(WABA_ID, template);
+        var response = whatsappBusinessCloudApi.createMessageTemplate(TestConstants.WABA_ID, template);
 
 ```
 
@@ -607,7 +607,7 @@ You can use 4 different endpoints to manage your media:
 ```java
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 
 
         var fileName = "starwars.png";
@@ -615,7 +615,7 @@ You can use 4 different endpoints to manage your media:
         byte[] fileContent = Files.readAllBytes(Paths.get("src/test/resources/" + fileName));
 
 
-        var response = whatsappBusinessCloudApi.uploadMedia(PHONE_NUMBER_ID, fileName, FileType.PNG, fileContent);
+        var response = whatsappBusinessCloudApi.uploadMedia(TestConstants.PHONE_NUMBER_ID, fileName, FileType.PNG, fileContent);
 
         System.out.println(response);
 ```
@@ -626,7 +626,7 @@ You can use 4 different endpoints to manage your media:
 ```java
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 
         var response = whatsappBusinessCloudApi.retrieveMediaUrl("1227829768162607");
 
@@ -639,7 +639,7 @@ You can use 4 different endpoints to manage your media:
 ```java
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 
         //delete media
         var response = whatsappBusinessCloudApi.deleteMedia("723050006231302");
@@ -653,7 +653,7 @@ You can use 4 different endpoints to manage your media:
 ```java
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 
         // retrieve the media file url
         var mediaUrl = whatsappBusinessCloudApi.retrieveMediaUrl("723050006231302");

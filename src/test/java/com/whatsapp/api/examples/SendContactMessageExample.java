@@ -15,13 +15,13 @@ public class SendContactMessageExample {
 
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildContactMessage(new ContactMessage()//
                         .addContacts(new Contact()//
                                 .addPhones(new Phone()//
-                                        .setPhone(PHONE_NUMBER_1)//
+                                        .setPhone(TestConstants.PHONE_NUMBER_1)//
                                         .setType(AddressType.HOME))//
                                 .setName(new Name()//
                                         .setFormattedName("Mauricio Binda")//
@@ -29,7 +29,7 @@ public class SendContactMessageExample {
                         ));
 
 
-        whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
     }
 }

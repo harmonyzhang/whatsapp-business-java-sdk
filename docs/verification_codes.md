@@ -14,9 +14,9 @@ See the examples:
 ```java
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
-        var response = whatsappBusinessManagementApi.requestCode(PHONE_NUMBER_ID, new RequestCode(CodeMethodType.SMS, LanguageType.EN_US));
+        var response = whatsappBusinessManagementApi.requestCode(TestConstants.PHONE_NUMBER_ID, new RequestCode(CodeMethodType.SMS, LanguageType.EN_US));
 
         System.out.println(response);
 ```
@@ -28,9 +28,9 @@ See the examples:
 ```java
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
-        var response2 = whatsappBusinessManagementApi.verifyCode(PHONE_NUMBER_ID, new VerifyCode("0000"));
+        var response2 = whatsappBusinessManagementApi.verifyCode(TestConstants.PHONE_NUMBER_ID, new VerifyCode("0000"));
 
         System.out.println(response2);
 ```

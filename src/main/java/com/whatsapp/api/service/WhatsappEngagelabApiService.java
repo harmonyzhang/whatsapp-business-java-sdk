@@ -1,20 +1,17 @@
 package com.whatsapp.api.service;
 
 
+import com.whatsapp.api.configuration.WhatsappApiConfig;
 import com.whatsapp.api.domain.messages.engaglab.Message;
 import com.whatsapp.api.domain.messages.engaglab.response.MessageResponse;
 import com.whatsapp.api.domain.response.Response;
 import com.whatsapp.api.domain.templates.MessageTemplate;
 import com.whatsapp.api.domain.templates.response.MessageTemplateIDResponse;
-import com.whatsapp.api.domain.templates.response.MessageTemplates;
 import com.whatsapp.api.domain.templates.response.Template;
 import retrofit2.Call;
 import retrofit2.http.*;
 
 import java.util.List;
-
-import static com.whatsapp.api.configuration.WhatsappApiConfig.API_VERSION;
-import static com.whatsapp.api.configuration.WhatsappApiConfig.ENGAGELAB_API_VERSION;
 
 
 /**
@@ -29,7 +26,7 @@ public interface WhatsappEngagelabApiService {
      * @param message       the message
      * @return the call
      */
-    @POST("/" + ENGAGELAB_API_VERSION + "/messages")
+    @POST("/" + WhatsappApiConfig.ENGAGELAB_API_VERSION + "/messages")
     Call<MessageResponse> sendMessage(@Body Message message);
 
     /**
@@ -38,7 +35,7 @@ public interface WhatsappEngagelabApiService {
      * @param messageTemplate           the message template
      * @return the call
      */
-    @POST("/" + ENGAGELAB_API_VERSION + "/templates")
+    @POST("/" + WhatsappApiConfig.ENGAGELAB_API_VERSION + "/templates")
     Call<MessageTemplateIDResponse> createMessageTemplate(@Body MessageTemplate messageTemplate);
 
 
@@ -47,7 +44,7 @@ public interface WhatsappEngagelabApiService {
      *
      * @return the call
      */
-    @GET("/" + ENGAGELAB_API_VERSION + "/templates")
+    @GET("/" + WhatsappApiConfig.ENGAGELAB_API_VERSION + "/templates")
     Call<List<Template>> retrieveTemplates();
 
     /**
@@ -57,7 +54,7 @@ public interface WhatsappEngagelabApiService {
      * @param messageTemplate           the message template
      * @return the call
      */
-    @PUT("/" + ENGAGELAB_API_VERSION + "/templates/{message-template-id}")
+    @PUT("/" + WhatsappApiConfig.ENGAGELAB_API_VERSION + "/templates/{message-template-id}")
     Call<Response> updateMessageTemplate(@Path("message-template-id") String messageTemplateId, @Body MessageTemplate messageTemplate);
 
     /**
@@ -66,7 +63,7 @@ public interface WhatsappEngagelabApiService {
      * @param name                      the name
      * @return the call
      */
-    @DELETE("/" + ENGAGELAB_API_VERSION + "/templates/{message-template-name}")
+    @DELETE("/" + WhatsappApiConfig.ENGAGELAB_API_VERSION + "/templates/{message-template-name}")
     Call<Response> deleteMessageTemplate(@Path("message-template-name") String name);
 
 

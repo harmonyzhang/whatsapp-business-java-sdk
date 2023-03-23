@@ -1,5 +1,6 @@
 package com.whatsapp.api.examples;
 
+import com.whatsapp.api.TestConstants;
 import com.whatsapp.api.WhatsappApiFactory;
 import com.whatsapp.api.domain.templates.BodyComponent;
 import com.whatsapp.api.domain.templates.Example;
@@ -10,15 +11,12 @@ import com.whatsapp.api.domain.templates.type.HeaderFormat;
 import com.whatsapp.api.domain.templates.type.LanguageType;
 import com.whatsapp.api.impl.WhatsappBusinessManagementApi;
 
-import static com.whatsapp.api.TestConstants.TOKEN;
-import static com.whatsapp.api.TestConstants.WABA_ID;
-
 public class UpdateMessageTemplateExample {
 
     public static void main(String[] args) {
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
         MessageTemplate template = new MessageTemplate();
 
@@ -34,7 +32,7 @@ public class UpdateMessageTemplateExample {
                                 .addBodyTextExamples("Mr. José", "satisfaction")//
                         ))//
         ;
-        whatsappBusinessCloudApi.updateMessageTemplate(WABA_ID, "1144996326396573", template);
+        whatsappBusinessCloudApi.updateMessageTemplate(TestConstants.WABA_ID, "1144996326396573", template);
     }
 
 }

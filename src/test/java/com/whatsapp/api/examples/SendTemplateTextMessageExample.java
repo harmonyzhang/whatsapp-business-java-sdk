@@ -16,7 +16,7 @@ public class SendTemplateTextMessageExample {
     public static void main(String[] args) {
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 
         Message message = MessageBuilder.builder()//
                 .setTo(TestConstants.PHONE_NUMBER_1)//
@@ -31,7 +31,7 @@ public class SendTemplateTextMessageExample {
 
                 );
 
-        whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
 
     }

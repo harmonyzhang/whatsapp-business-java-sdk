@@ -1,5 +1,6 @@
 package com.whatsapp.api.examples;
 
+import com.whatsapp.api.TestConstants;
 import com.whatsapp.api.WhatsappApiFactory;
 import com.whatsapp.api.domain.messages.ImageMessage;
 import com.whatsapp.api.domain.messages.Message;
@@ -7,9 +8,7 @@ import com.whatsapp.api.domain.messages.Message.MessageBuilder;
 import com.whatsapp.api.domain.messages.response.MessageResponse;
 import com.whatsapp.api.impl.WhatsappBusinessCloudApi;
 
-import static com.whatsapp.api.TestConstants.PHONE_NUMBER_1;
 import static com.whatsapp.api.TestConstants.PHONE_NUMBER_ID;
-import static com.whatsapp.api.TestConstants.TOKEN;
 
 
 public class SendImageLinkMessageExample {
@@ -19,17 +18,17 @@ public class SendImageLinkMessageExample {
 
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TOKEN);
+        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi(TestConstants.TOKEN);
 
         ImageMessage imageMessage = new ImageMessage()//
                 .setLink("https://upload.wikimedia.org/wikipedia/pt/4/45/Yoda.jpg").setCaption("See this image, please");
 
         Message message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
+                .setTo(TestConstants.PHONE_NUMBER_1)//
                 .buildImageMessage(imageMessage);
 
 
-        MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
         System.out.println(messageResponse);
 

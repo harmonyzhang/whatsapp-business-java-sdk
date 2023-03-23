@@ -1,5 +1,6 @@
 package com.whatsapp.api.service;
 
+import com.whatsapp.api.configuration.WhatsappApiConfig;
 import com.whatsapp.api.domain.phone.PhoneNumber;
 import com.whatsapp.api.domain.phone.PhoneNumbers;
 import com.whatsapp.api.domain.phone.RequestCode;
@@ -12,8 +13,6 @@ import retrofit2.Call;
 import retrofit2.http.*;
 
 import java.util.Map;
-
-import static com.whatsapp.api.configuration.WhatsappApiConfig.API_VERSION;
 
 /**
  * The interface Whatsapp business management api service.
@@ -28,7 +27,7 @@ public interface WhatsappBusinessManagementApiService {
      * @param messageTemplate           the message template
      * @return the call
      */
-    @POST("/" + API_VERSION + "/{whatsapp-business-account-ID}/message_templates")
+    @POST("/" + WhatsappApiConfig.API_VERSION + "/{whatsapp-business-account-ID}/message_templates")
     Call<Template> createMessageTemplate(@Path("whatsapp-business-account-ID") String whatsappBusinessAccountId, @Body MessageTemplate messageTemplate);
 
     /**
@@ -39,7 +38,7 @@ public interface WhatsappBusinessManagementApiService {
      * @param messageTemplate           the message template
      * @return the call
      */
-    @POST("/" + API_VERSION + "/{whatsapp-business-account-ID}/message_templates/{message-template-id}")
+    @POST("/" + WhatsappApiConfig.API_VERSION + "/{whatsapp-business-account-ID}/message_templates/{message-template-id}")
     Call<Template> updateMessageTemplate(@Path("whatsapp-business-account-ID") String whatsappBusinessAccountId, @Path("message-template-id") String messageTemplateId, @Body MessageTemplate messageTemplate);
 
     /**
@@ -49,7 +48,7 @@ public interface WhatsappBusinessManagementApiService {
      * @param name                      the name
      * @return the call
      */
-    @DELETE("/" + API_VERSION + "/{whatsapp-business-account-ID}/message_templates")
+    @DELETE("/" + WhatsappApiConfig.API_VERSION + "/{whatsapp-business-account-ID}/message_templates")
     Call<Response> deleteMessageTemplate(@Path("whatsapp-business-account-ID") String whatsappBusinessAccountId, @Query("name") String name);
 
     /**
@@ -58,7 +57,7 @@ public interface WhatsappBusinessManagementApiService {
      * @param whatsappBusinessAccountId the whatsapp business account id
      * @return the call
      */
-    @GET("/" + API_VERSION + "/{whatsapp-business-account-ID}/message_templates")
+    @GET("/" + WhatsappApiConfig.API_VERSION + "/{whatsapp-business-account-ID}/message_templates")
     Call<MessageTemplates> retrieveTemplates(@Path("whatsapp-business-account-ID") String whatsappBusinessAccountId);
 
     /**
@@ -68,7 +67,7 @@ public interface WhatsappBusinessManagementApiService {
      * @param filters                   the filters
      * @return the call
      */
-    @GET("/" + API_VERSION + "/{whatsapp-business-account-ID}/message_templates")
+    @GET("/" + WhatsappApiConfig.API_VERSION + "/{whatsapp-business-account-ID}/message_templates")
     Call<MessageTemplates> retrieveTemplates(@Path("whatsapp-business-account-ID") String whatsappBusinessAccountId, @QueryMap Map<String, Object> filters);
 
 
@@ -79,7 +78,7 @@ public interface WhatsappBusinessManagementApiService {
      * @param queryParams   the query params
      * @return the call
      */
-    @GET("/" + API_VERSION + "/{phone-number-ID}")
+    @GET("/" + WhatsappApiConfig.API_VERSION + "/{phone-number-ID}")
     Call<PhoneNumber> retrievePhoneNumber(@Path("phone-number-ID") String phoneNumberId, @QueryMap Map<String, Object> queryParams);
 
 
@@ -89,7 +88,7 @@ public interface WhatsappBusinessManagementApiService {
      * @param whatsappBusinessAccountId the whatsapp business account id
      * @return the call
      */
-    @GET("/" + API_VERSION + "/{whatsapp-business-account-ID}/phone_numbers")
+    @GET("/" + WhatsappApiConfig.API_VERSION + "/{whatsapp-business-account-ID}/phone_numbers")
     Call<PhoneNumbers> retrievePhoneNumbers(@Path("whatsapp-business-account-ID") String whatsappBusinessAccountId);
 
     /**
@@ -99,7 +98,7 @@ public interface WhatsappBusinessManagementApiService {
      * @param requestCode   the request code
      * @return the call
      */
-    @POST("/" + API_VERSION + "/{phone-number-ID}/request_code")
+    @POST("/" + WhatsappApiConfig.API_VERSION + "/{phone-number-ID}/request_code")
     Call<Response> requestCode(@Path("phone-number-ID") String phoneNumberId, @Body RequestCode requestCode);
 
     /**
@@ -109,7 +108,7 @@ public interface WhatsappBusinessManagementApiService {
      * @param verifyCode    the verify code
      * @return the call
      */
-    @POST("/" + API_VERSION + "/{phone-number-ID}/verify_code")
+    @POST("/" + WhatsappApiConfig.API_VERSION + "/{phone-number-ID}/verify_code")
     Call<Response> verifyCode(@Path("phone-number-ID") String phoneNumberId, @Body VerifyCode verifyCode);
 
 

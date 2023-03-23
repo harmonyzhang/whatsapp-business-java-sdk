@@ -3,6 +3,7 @@ package com.whatsapp.api.impl;
 import com.whatsapp.api.MockServerUtilsTest;
 import com.whatsapp.api.TestConstants;
 import com.whatsapp.api.WhatsappApiFactory;
+import com.whatsapp.api.configuration.WhatsappApiConfig;
 import com.whatsapp.api.domain.phone.PhoneNumber;
 import com.whatsapp.api.domain.phone.PhoneNumbers;
 import com.whatsapp.api.domain.phone.RequestCode;
@@ -33,11 +34,6 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-import static com.whatsapp.api.TestConstants.PHONE_NUMBER_ID;
-import static com.whatsapp.api.TestConstants.TOKEN;
-import static com.whatsapp.api.TestConstants.WABA_ID;
-import static com.whatsapp.api.configuration.WhatsappApiConfig.API_VERSION;
-
 class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
 
 
@@ -48,7 +44,7 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
     void testCreateMessageTemplate() throws IOException, URISyntaxException {
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
         mockWebServer.enqueue(new MockResponse().setResponseCode(200).setBody(fromResource("/template.json")));
 
@@ -70,7 +66,7 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
 
         ;
 
-        Template response = whatsappBusinessCloudApi.createMessageTemplate(WABA_ID, template);
+        Template response = whatsappBusinessCloudApi.createMessageTemplate(TestConstants.WABA_ID, template);
 
         Assertions.assertEquals("952305634123456", response.getId());
         Assertions.assertEquals("REJECTED", response.getStatus());
@@ -85,7 +81,7 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
     void testUpdateMessageTemplate() throws IOException, URISyntaxException {
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
         mockWebServer.enqueue(new MockResponse().setResponseCode(200).setBody(fromResource("/template.json")));
 
@@ -106,7 +102,7 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
 
         ;
 
-        Template response = whatsappBusinessCloudApi.updateMessageTemplate(WABA_ID, "952305634123456", template);
+        Template response = whatsappBusinessCloudApi.updateMessageTemplate(TestConstants.WABA_ID, "952305634123456", template);
 
         Assertions.assertEquals("952305634123456", response.getId());
     }
@@ -119,11 +115,11 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
     void testDeleteMessageTemplate() throws IOException, URISyntaxException {
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
         mockWebServer.enqueue(new MockResponse().setResponseCode(200).setBody(fromResource("/deleteTemplate.json")));
 
-        Response resp = whatsappBusinessCloudApi.deleteMessageTemplate(WABA_ID, "welcome_template");
+        Response resp = whatsappBusinessCloudApi.deleteMessageTemplate(TestConstants.WABA_ID, "welcome_template");
 
         Assertions.assertTrue(resp.isSuccess());
 
@@ -134,7 +130,7 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
     void testCreateMessageTemplate2() throws IOException, URISyntaxException {
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
         mockWebServer.enqueue(new MockResponse().setResponseCode(200).setBody(fromResource("/template.json")));
 
@@ -156,7 +152,7 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
 
         ;
 
-        Template response = whatsappBusinessCloudApi.createMessageTemplate(WABA_ID, template);
+        Template response = whatsappBusinessCloudApi.createMessageTemplate(TestConstants.WABA_ID, template);
 
         Assertions.assertEquals("952305634123456", response.getId());
     }
@@ -166,7 +162,7 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
     void testCreateMessageTemplate3() throws IOException, URISyntaxException {
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
         mockWebServer.enqueue(new MockResponse().setResponseCode(200).setBody(fromResource("/template.json")));
 
         MessageTemplate template = new MessageTemplate();
@@ -195,7 +191,7 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
 
         ;
 
-        Template response = whatsappBusinessCloudApi.createMessageTemplate(WABA_ID, template);
+        Template response = whatsappBusinessCloudApi.createMessageTemplate(TestConstants.WABA_ID, template);
 
         Assertions.assertEquals("952305634123456", response.getId());
     }
@@ -204,7 +200,7 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
     void testCreateMessageTemplate4() throws IOException, URISyntaxException {
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
         mockWebServer.enqueue(new MockResponse().setResponseCode(200).setBody(fromResource("/template.json")));
 
         MessageTemplate template = new MessageTemplate();
@@ -231,7 +227,7 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
 
         ;
 
-        Template response = whatsappBusinessCloudApi.createMessageTemplate(WABA_ID, template);
+        Template response = whatsappBusinessCloudApi.createMessageTemplate(TestConstants.WABA_ID, template);
 
         Assertions.assertEquals("952305634123456", response.getId());
     }
@@ -241,10 +237,10 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
     void testRetrieveMessageTemplate1() throws IOException, URISyntaxException {
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
         mockWebServer.enqueue(new MockResponse().setResponseCode(200).setBody(fromResource("/retTemplate1.json")));
 
-        MessageTemplates templates = whatsappBusinessCloudApi.retrieveTemplates(WABA_ID);
+        MessageTemplates templates = whatsappBusinessCloudApi.retrieveTemplates(TestConstants.WABA_ID);
 
 
         Assertions.assertEquals(7, templates.getData().size());
@@ -258,10 +254,10 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
     void testRetrieveMessageTemplate2() throws IOException, URISyntaxException {
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
         mockWebServer.enqueue(new MockResponse().setResponseCode(200).setBody(fromResource("/retTemplate2.json")));
 
-        MessageTemplates templates = whatsappBusinessCloudApi.retrieveTemplates(WABA_ID, 2);
+        MessageTemplates templates = whatsappBusinessCloudApi.retrieveTemplates(TestConstants.WABA_ID, 2);
 
 
         Assertions.assertEquals(2, templates.getData().size());
@@ -275,10 +271,10 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
     void testRetrieveMessageTemplate3() throws IOException, URISyntaxException {
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi whatsappBusinessCloudApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
         mockWebServer.enqueue(new MockResponse().setResponseCode(200).setBody(fromResource("/retTemplate3.json")));
 
-        MessageTemplates templates = whatsappBusinessCloudApi.retrieveTemplates(WABA_ID, "welcome_template3");
+        MessageTemplates templates = whatsappBusinessCloudApi.retrieveTemplates(TestConstants.WABA_ID, "welcome_template3");
 
 
         Assertions.assertEquals(1, templates.getData().size());
@@ -293,13 +289,13 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
 
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi businessManagementApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi businessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
-        PhoneNumber phoneNumber = businessManagementApi.retrievePhoneNumber(PHONE_NUMBER_ID);
+        PhoneNumber phoneNumber = businessManagementApi.retrievePhoneNumber(TestConstants.PHONE_NUMBER_ID);
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("GET", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + API_VERSION + "/" + PHONE_NUMBER_ID, recordedRequest.getPath());
+        Assertions.assertEquals("/" + WhatsappApiConfig.API_VERSION + "/" + TestConstants.PHONE_NUMBER_ID, recordedRequest.getPath());
 
         Assertions.assertEquals("11111111111", phoneNumber.getDisplayPhoneNumber());
         Assertions.assertNull(phoneNumber.getNameStatus());
@@ -315,13 +311,13 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
 
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi businessManagementApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi businessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
-        PhoneNumber phoneNumber = businessManagementApi.retrievePhoneNumber(PHONE_NUMBER_ID, "name_status", "verified_name");
+        PhoneNumber phoneNumber = businessManagementApi.retrievePhoneNumber(TestConstants.PHONE_NUMBER_ID, "name_status", "verified_name");
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("GET", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + API_VERSION + "/" + PHONE_NUMBER_ID + "?fields=name_status%2Cverified_name", recordedRequest.getPath());
+        Assertions.assertEquals("/" + WhatsappApiConfig.API_VERSION + "/" + TestConstants.PHONE_NUMBER_ID + "?fields=name_status%2Cverified_name", recordedRequest.getPath());
 
         Assertions.assertNull(phoneNumber.getDisplayPhoneNumber());
         Assertions.assertEquals(NameStatusType.APPROVED, phoneNumber.getNameStatus());
@@ -337,13 +333,13 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
 
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi businessManagementApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi businessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
-        PhoneNumbers phoneNumbers = businessManagementApi.retrievePhoneNumbers(WABA_ID);
+        PhoneNumbers phoneNumbers = businessManagementApi.retrievePhoneNumbers(TestConstants.WABA_ID);
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("GET", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + API_VERSION + "/" + WABA_ID + "/phone_numbers", recordedRequest.getPath());
+        Assertions.assertEquals("/" + WhatsappApiConfig.API_VERSION + "/" + TestConstants.WABA_ID + "/phone_numbers", recordedRequest.getPath());
 
         Assertions.assertNotNull(phoneNumbers.getData());
         Assertions.assertNotNull(phoneNumbers.getPaging());
@@ -366,13 +362,13 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
 
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi businessManagementApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi businessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
         WhatsappApiException ex = Assertions.assertThrows(WhatsappApiException.class, () -> businessManagementApi.retrievePhoneNumber("454545"));
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("GET", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + API_VERSION + "/" + "454545", recordedRequest.getPath());
+        Assertions.assertEquals("/" + WhatsappApiConfig.API_VERSION + "/" + "454545", recordedRequest.getPath());
 
         Assertions.assertEquals("Unsupported get request. Object with ID '454545' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api", ex.getMessage());
 
@@ -387,13 +383,13 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
 
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi businessManagementApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi businessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
-        Response reponse = businessManagementApi.requestCode(PHONE_NUMBER_ID, new RequestCode(CodeMethodType.SMS, LanguageType.EN_US));
+        Response reponse = businessManagementApi.requestCode(TestConstants.PHONE_NUMBER_ID, new RequestCode(CodeMethodType.SMS, LanguageType.EN_US));
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("POST", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + API_VERSION + "/" + PHONE_NUMBER_ID + "/request_code", recordedRequest.getPath());
+        Assertions.assertEquals("/" + WhatsappApiConfig.API_VERSION + "/" + TestConstants.PHONE_NUMBER_ID + "/request_code", recordedRequest.getPath());
         Assertions.assertEquals("{\"code_method\":\"SMS\",\"language\":\"en_US\"}", recordedRequest.getBody().readUtf8());
 
         Assertions.assertTrue(reponse.isSuccess());
@@ -409,13 +405,13 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
 
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi businessManagementApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi businessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
-        WhatsappApiException ex = Assertions.assertThrows(WhatsappApiException.class, () -> businessManagementApi.requestCode(PHONE_NUMBER_ID, new RequestCode(CodeMethodType.SMS, LanguageType.EN_US)));
+        WhatsappApiException ex = Assertions.assertThrows(WhatsappApiException.class, () -> businessManagementApi.requestCode(TestConstants.PHONE_NUMBER_ID, new RequestCode(CodeMethodType.SMS, LanguageType.EN_US)));
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("POST", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + API_VERSION + "/" + PHONE_NUMBER_ID + "/request_code", recordedRequest.getPath());
+        Assertions.assertEquals("/" + WhatsappApiConfig.API_VERSION + "/" + TestConstants.PHONE_NUMBER_ID + "/request_code", recordedRequest.getPath());
         Assertions.assertEquals("{\"code_method\":\"SMS\",\"language\":\"en_US\"}", recordedRequest.getBody().readUtf8());
 
         Assertions.assertEquals("Request code error | Tente novamente depois de um tempo.", ex.getMessage());
@@ -431,13 +427,13 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
 
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi businessManagementApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi businessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
-        Response reponse = businessManagementApi.verifyCode(PHONE_NUMBER_ID, new VerifyCode("12345678"));
+        Response reponse = businessManagementApi.verifyCode(TestConstants.PHONE_NUMBER_ID, new VerifyCode("12345678"));
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("POST", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + API_VERSION + "/" + PHONE_NUMBER_ID + "/verify_code", recordedRequest.getPath());
+        Assertions.assertEquals("/" + WhatsappApiConfig.API_VERSION + "/" + TestConstants.PHONE_NUMBER_ID + "/verify_code", recordedRequest.getPath());
         Assertions.assertEquals("{\"code\":\"12345678\"}", recordedRequest.getBody().readUtf8());
 
         Assertions.assertTrue(reponse.isSuccess());
@@ -453,13 +449,13 @@ class WhatsappBusinessManagementApiTest extends MockServerUtilsTest {
 
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi businessManagementApi = factory.newBusinessManagementApi(TOKEN);
+        WhatsappBusinessManagementApi businessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
-        WhatsappApiException ex = Assertions.assertThrows(WhatsappApiException.class, () -> businessManagementApi.verifyCode(PHONE_NUMBER_ID, new VerifyCode("12345678")));
+        WhatsappApiException ex = Assertions.assertThrows(WhatsappApiException.class, () -> businessManagementApi.verifyCode(TestConstants.PHONE_NUMBER_ID, new VerifyCode("12345678")));
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("POST", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + API_VERSION + "/" + PHONE_NUMBER_ID + "/verify_code", recordedRequest.getPath());
+        Assertions.assertEquals("/" + WhatsappApiConfig.API_VERSION + "/" + TestConstants.PHONE_NUMBER_ID + "/verify_code", recordedRequest.getPath());
         Assertions.assertEquals("{\"code\":\"12345678\"}", recordedRequest.getBody().readUtf8());
 
         Assertions.assertEquals("Verify code error | O código inserido está incorreto.", ex.getMessage());
