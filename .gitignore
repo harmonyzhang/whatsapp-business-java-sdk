@@ -26,3 +26,8 @@ hs_err_pid*
 /target/
 /src/test/java/com/whatsapp/api/TestConstants.java
 /src/test/java/com/whatsapp/api/TestConstants.java
+.github/workflows/maven-ci.yml
+.github/workflows/javadoc.yml
+.github/workflows/codeql-analysis.yml
+*.yml
+*.yml
