@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.whatsapp.api</groupId>
+    <groupId>io.github.harmonyzhang</groupId>
     <artifactId>whatsapp-business-java-api</artifactId>
     <version>v0.1.0</version>
     <licenses>
