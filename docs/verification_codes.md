@@ -9,33 +9,33 @@ You need to verify the phone number you want to use to send messages to your cus
 
 See the examples:
 
-#### [Get a verification code:](https://github.com/harmonyzhang/whatsapp-business-java-api/blob/main/src/test/java/com/whatsapp/api/examples/RequestVerificationCodeExample.java)
+#### [Get a verification code:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/RequestVerificationCodeExample.java)
 
 ```java
-        WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
+WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
+WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
-        var response = whatsappBusinessManagementApi.requestCode(TestConstants.PHONE_NUMBER_ID, new RequestCode(CodeMethodType.SMS, LanguageType.EN_US));
+var response = whatsappBusinessManagementApi.requestCode(TestConstants.PHONE_NUMBER_ID, new RequestCode(CodeMethodType.SMS, LanguageType.EN_US));
 
-        System.out.println(response);
+System.out.println(response);
 ```
 
 ---
 
-#### [Verify a verification code:](https://github.com/harmonyzhang/whatsapp-business-java-api/blob/main/src/test/java/com/whatsapp/api/examples/RequestVerificationCodeExample.java)
+#### [Verify a verification code:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/RequestVerificationCodeExample.java)
 
 ```java
-        WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
+WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
-        WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
+WhatsappBusinessManagementApi whatsappBusinessManagementApi = factory.newBusinessManagementApi(TestConstants.TOKEN);
 
-        var response2 = whatsappBusinessManagementApi.verifyCode(TestConstants.PHONE_NUMBER_ID, new VerifyCode("0000"));
+var response2 = whatsappBusinessManagementApi.verifyCode(TestConstants.PHONE_NUMBER_ID, new VerifyCode("0000"));
 
-        System.out.println(response2);
+System.out.println(response2);
 ```
 ---
 
-See full examples [here](https://github.com/harmonyzhang/whatsapp-business-java-api/blob/main/src/test/java/com/whatsapp/api/examples/RequestVerificationCodeExample.java)
+See full examples [here](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/RequestVerificationCodeExample.java)
 
 [:arrow_heading_up: back](../README.md#link-links)
