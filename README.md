@@ -154,7 +154,7 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
 
 ## :scroll: Examples (Sending messages)
 
-#### [Sending a simple text message:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/SendTextMessageExample.java)
+#### [Sending a simple text message:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/test/examples/SendTextMessageExample.java)
 
 ```java
 WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
@@ -178,7 +178,7 @@ whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 [:arrow_heading_up: back](#link-links)
 
 ---        
-#### [Sending a message with buttons (template):](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/SendTemplateButtonMessageExample.java)
+#### [Sending a message with buttons (template):](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/test/examples/SendTemplateButtonMessageExample.java)
 
 ```java
 WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
@@ -209,7 +209,7 @@ whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 [:arrow_heading_up: back](#link-links)
 
 ---
-#### [Sending a message with a contact](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/SendContactMessageExample.java)
+#### [Sending a message with a contact](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/test/examples/SendContactMessageExample.java)
 
 ```java
 WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
@@ -238,7 +238,7 @@ whatsappBusinessCloudApi.sendMessage(TestConstants.PHONE_NUMBER_ID, message);
 
 ---
 
-#### [Sending an interactive message with buttons:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/SendInteractiveMessageExample.java)
+#### [Sending an interactive message with buttons:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/test/examples/SendInteractiveMessageExample.java)
 
 ```java
 WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
@@ -278,7 +278,7 @@ System.out.println(messageResponse);
 
 ---
 
-#### [Sending an interactive message with a list:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/SendInteractiveMessageExample.java)
+#### [Sending an interactive message with a list:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/test/examples/SendInteractiveMessageExample.java)
 
 ```java
 WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
@@ -346,7 +346,7 @@ System.out.println(messageResponse);
 
 ---
 
-#### [Sending an audio message:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/SendAudioMessageExample.java)
+#### [Sending an audio message:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/test/examples/SendAudioMessageExample.java)
 
 ```java
 WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
@@ -372,7 +372,7 @@ MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(TestConst
 
 ---
 
-#### [Sending a document message:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/SendDocumentMessageExample.java)
+#### [Sending a document message:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/test/examples/SendDocumentMessageExample.java)
 
 ```java
 
@@ -402,7 +402,7 @@ MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(TestConst
 
 ---
 
-#### [Sending an image link message:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/SendImageLinkMessageExample.java)
+#### [Sending an image link message:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/test/examples/SendImageLinkMessageExample.java)
 
 ```java
 WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
@@ -427,7 +427,7 @@ MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(TestConst
 
 ---
 
-#### [Sending an image message:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/SendImageMessageExample.java)
+#### [Sending an image message:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/test/examples/SendImageMessageExample.java)
 
 ```java
 WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
@@ -456,7 +456,7 @@ MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(TestConst
 
 ---
 
-#### [Sending a sticker message:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/SendStickerExample.java)
+#### [Sending a sticker message:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/test/examples/SendStickerExample.java)
 
 ```java
 WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
@@ -484,7 +484,7 @@ MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(TestConst
 
 ---
 
-#### [Sending a video message:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/SendVideoStickerExample.java)
+#### [Sending a video message:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/test/examples/SendVideoStickerExample.java)
 
 ```java
 WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
@@ -510,7 +510,7 @@ MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(TestConst
 
 ## :scroll: Examples (WhatsApp Business Management API)
 
-#### [Create a message template](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/CreateMessageTemplate3Example.java)
+#### [Create a message template](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/test/examples/CreateMessageTemplate3Example.java)
 
 ```java
 WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
@@ -612,7 +612,7 @@ You can use 4 different endpoints to manage your media:
 
 **See the examples:**
 
-#### [Uploading media](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/UploadMediaExample.java)
+#### [Uploading media](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/test/examples/UploadMediaExample.java)
 
 ```java
 WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
@@ -631,7 +631,7 @@ System.out.println(response);
 ```
 [:arrow_heading_up: back](#link-links)
 
-#### [Retrieving the URL for a specific media](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/RetrieveMediaUrlExample.java)
+#### [Retrieving the URL for a specific media](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/test/examples/RetrieveMediaUrlExample.java)
 
 ```java
 WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
@@ -644,7 +644,7 @@ System.out.println(response);
 ```
 [:arrow_heading_up: back](#link-links)
 
-#### [Deleting a specific media](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/DeleteMediaExample.java)
+#### [Deleting a specific media](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/test/examples/DeleteMediaExample.java)
 
 ```java
 WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
@@ -658,7 +658,7 @@ System.out.println(response);
 ```
 [:arrow_heading_up: back](#link-links)
 
-#### [Downloading media from a media URL](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/DownloadMediaExample.java)
+#### [Downloading media from a media URL](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/test/examples/DownloadMediaExample.java)
 
 ```java
 WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
