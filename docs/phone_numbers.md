@@ -6,7 +6,7 @@ You can:
 
 See the examples:
 
-#### [Get a phone number data list:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/RetrievePhoneNumberExample.java)
+#### [Get a phone number data list:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/test/examples/RetrievePhoneNumberExample.java)
 
 ```java
 WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
@@ -22,7 +22,7 @@ System.out.println(mapper.writeValueAsString(phoneNumbers));
 
 ---
 
-#### [Get a phone number data by id:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/RetrievePhoneNumberExample.java)
+#### [Get a phone number data by id:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/test/examples/RetrievePhoneNumberExample.java)
 
 ```java
 WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
@@ -38,7 +38,7 @@ System.out.println(mapper.writeValueAsString(phoneNumber));
 
 ---
 
-#### [Get a phone number data with specific fields:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/RetrievePhoneNumberExample.java)
+#### [Get a phone number data with specific fields:](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/test/examples/RetrievePhoneNumberExample.java)
 
 ```java
 WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
@@ -52,6 +52,6 @@ ObjectMapper mapper = new ObjectMapper();
 System.out.println(mapper.writeValueAsString(phoneNumber));
 ```
 ---
-See full examples [here](https://github.com/harmonyzhang/whatsapp-business-java-sdk/blob/main/src/test/java/com/whatsapp/api/examples/RetrievePhoneNumberExample.java)
+See full examples [here](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/test/examples/RetrievePhoneNumberExample.java)
 
 [:arrow_heading_up: back](../README.md#link-links)
