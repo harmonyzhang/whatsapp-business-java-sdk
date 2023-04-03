@@ -4,7 +4,7 @@
 
     <groupId>com.github.harmonyzhang</groupId>
     <artifactId>whatsapp-business-java-sdk</artifactId>
-    <version>v0.1.0</version>
+    <version>v0.2.1</version>
     <licenses>
         <license>
             <name>The MIT License</name>
@@ -40,12 +40,39 @@
         <commons-lang3.version>3.6</commons-lang3.version>
     </properties>
 
-    <distributionManagement>
+    <!--<distributionManagement>
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
             <url>https://maven.pkg.github.com/harmonyzhang/whatsapp-business-java-sdk</url>
         </repository>
+    </distributionManagement>-->
+
+    <repositories>
+        <repository>
+            <id>joinf-nexus-releases</id>
+            <name>joinf Repository</name>
+            <url>http://maven.rdc.joinf.com/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus</id>
+            <name>Team Nexus Repository</name>
+            <url>http://maven.rdc.joinf.com/nexus/content/groups/public</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <distributionManagement>
+        <repository>
+            <id>joinf-nexus-releases</id>
+            <url>http://maven.rdc.joinf.com/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>joinf-nexus-snapshot</id>
+            <url>http://maven.rdc.joinf.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
     </distributionManagement>
 
     <dependencies>

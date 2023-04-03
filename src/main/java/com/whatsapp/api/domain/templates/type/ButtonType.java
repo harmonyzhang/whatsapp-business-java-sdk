@@ -15,5 +15,5 @@ public enum ButtonType {
     /**
      * Quick reply button type.
      */
-    QUICK_REPLY
+    QUICK_REPLY,
 }

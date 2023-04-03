@@ -26,6 +26,16 @@ public class WhatsappApiConfig {
     public static String ENGAGELAB_DOMAIN = "https://wa.api.engagelab.cc/";
 
     /**
+     * The constant 极极光 BSP API VERSION.
+     */
+    public final static String ENGAGELAB_DEV_API_VERSION = "v1";
+
+    /**
+     * The constant 极光 BSP API DOMAIN.
+     */
+    public static String ENGAGELAB_DEV_DOMAIN = "https://dev.api.engagelab.cc";
+
+    /**
      * Sets base domain.
      *
      * @param baseDomain the base domain
@@ -36,6 +46,10 @@ public class WhatsappApiConfig {
 
     public static void setEngagelabDomain(String engagelabDomain) {
         ENGAGELAB_DOMAIN = engagelabDomain;
+    }
+
+    public static void setEngagelabDevDomain(String engagelabDomain) {
+        ENGAGELAB_DEV_DOMAIN = engagelabDomain;
     }
 
 

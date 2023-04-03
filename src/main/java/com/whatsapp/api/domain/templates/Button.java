@@ -1,13 +1,16 @@
 package com.whatsapp.api.domain.templates;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.whatsapp.api.domain.templates.type.ButtonType;
+import lombok.ToString;
 
 /**
  * The type Button.
  */
+@ToString
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
 @JsonSubTypes({@JsonSubTypes.Type(value = PhoneNumberButton.class, name = "PHONE_NUMBER"),//
@@ -39,6 +42,7 @@ public class Button {
         this.type = type;
         this.text = text;
     }
+
 
     /**
      * Instantiates a new Button.
