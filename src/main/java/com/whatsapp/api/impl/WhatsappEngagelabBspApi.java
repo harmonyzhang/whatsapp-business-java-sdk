@@ -1,7 +1,11 @@
 package com.whatsapp.api.impl;
 
+import com.whatsapp.api.domain.organization.Apikeys;
+import com.whatsapp.api.domain.organization.ApikeysResponse;
 import com.whatsapp.api.domain.organization.Organization;
 import com.whatsapp.api.domain.organization.OrganizationResponse;
+import com.whatsapp.api.domain.response.Response;
+import com.whatsapp.api.domain.webhook.engaglab.SetWebhook;
 import com.whatsapp.api.service.WhatsappEngagelabBspApiService;
 
 import static com.whatsapp.api.WhatsappApiServiceGenerator.createServiceBasic;
@@ -31,13 +35,21 @@ public class WhatsappEngagelabBspApi {
 
     /**
      * 创建组织
-     * @param organization       The {@link Organization} object.
+     * @param organization       The {@link Organization} organization.
      * @return {@link OrganizationResponse}
      */
     public OrganizationResponse createOrganization(Organization organization) {
         return executeSync(whatsappEngagelabBspApiService.createOrganization(organization));
     }
 
+    /**
+     * 创建api密钥
+     * @param apikeys       The {@link Apikeys} apikeys.
+     * @return {@link OrganizationResponse}
+     */
+    public ApikeysResponse createApikeys(Apikeys apikeys) {
+        return executeSync(whatsappEngagelabBspApiService.createApikeys(apikeys));
+    }
 
 
 }

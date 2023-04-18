@@ -5,17 +5,15 @@ import com.whatsapp.api.domain.messages.engaglab.response.MessageResponse;
 import com.whatsapp.api.domain.response.Response;
 import com.whatsapp.api.domain.templates.MessageTemplate;
 import com.whatsapp.api.domain.templates.response.MessageTemplateIDResponse;
-import com.whatsapp.api.domain.templates.response.MessageTemplates;
 import com.whatsapp.api.domain.templates.response.Template;
+import com.whatsapp.api.domain.webhook.engaglab.SetWebhook;
+import com.whatsapp.api.domain.webhook.engaglab.SetWebhookResponse;
 import com.whatsapp.api.service.WhatsappEngagelabApiService;
-import retrofit2.Call;
-import retrofit2.http.GET;
 
 import java.util.List;
 
 import static com.whatsapp.api.WhatsappApiServiceGenerator.createServiceBasic;
 import static com.whatsapp.api.WhatsappApiServiceGenerator.executeSync;
-import static com.whatsapp.api.configuration.WhatsappApiConfig.ENGAGELAB_API_VERSION;
 import static com.whatsapp.api.configuration.WhatsappApiConfig.ENGAGELAB_DOMAIN;
 
 /**
@@ -94,6 +92,20 @@ public class WhatsappEngagelabApi {
 
         return executeSync(whatsappEngagelabApiService.deleteMessageTemplate(name));
     }
+
+    /**
+     * 设置回调地址
+     *
+     * @param setWebhook                      the setWebhook
+     * @return the setWebhook success response
+     */
+    public SetWebhookResponse webhooks(SetWebhook setWebhook) {
+
+        return executeSync(whatsappEngagelabApiService.webhooks(setWebhook));
+    }
+
+
+
 
 
 }

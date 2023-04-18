@@ -11,6 +11,12 @@ public enum NotificationEventType {
      * 嵌入式注册成功.
      */
     @JsonProperty("whatsapp_bsp_add_waba")
-    ADD_WABA
+    ADD_WABA,
+
+    /**
+     * 预估费用
+     */
+    @JsonProperty("whatsapp_bsp_delivery_estimate_cost")
+    ESTIMATE_COST
 
 }

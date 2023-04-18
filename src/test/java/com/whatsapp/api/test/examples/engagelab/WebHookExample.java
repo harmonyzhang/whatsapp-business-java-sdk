@@ -12,6 +12,7 @@ public class WebHookExample {
         messageStatusWebHook();
         newMessageWebHook();
         addWabaWebHook();
+        estimatedCostWebHook();
     }
 
     /**
@@ -162,6 +163,36 @@ public class WebHookExample {
                 "            }\n" +
                 "        }\n" +
                 "    ]\n" +
+                "}";
+
+        WebHookEvent event = WebHook.constructEvent(payload);
+
+        System.out.println(event);
+    }
+
+    /**
+     * 通过BSP发送，预估费用
+     * @throws JsonProcessingException
+     */
+    private static void estimatedCostWebHook() throws JsonProcessingException {
+        String payload = "{\n" +
+                " \"total\":1,\n" +
+                " \"rows\":[{\n" +
+                "  \"message_id\":\"\",\n" +
+                "  \"from\":\"\",\n" +
+                "  \"to\":\"\",\n" +
+                "  \"server\": \"whatsapp\", \n" +
+                "  \"channel\": \"whatsapp\", \n" +
+                "  \"itime\":1640707579,\n" +
+                "  \"notification\":{\n" +
+                "  \t\"event\":\"whatsapp_bsp_delivery_estimate_cost\",\n" +
+                "        \"notification_data\":{\n" +
+                "          \"org_id\": \"123\",\n" +
+                "          \"waba_id\": \"123\",\n" +
+                "          \"estimated_cost\": 230\n" +
+                "    }\n" +
+                "  }\n" +
+                "}]\n" +
                 "}";
 
         WebHookEvent event = WebHook.constructEvent(payload);

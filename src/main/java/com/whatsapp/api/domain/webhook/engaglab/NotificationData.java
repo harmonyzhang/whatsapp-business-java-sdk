@@ -20,4 +20,17 @@ public class NotificationData {
     @JsonProperty("waba_list") List<NotificationWaba> wabaList;
 
 
+
+    /**
+     * 发送号所属的 WhatsApp 商业账户的编号 (预估费用的参数)
+     */
+    @JsonProperty("waba_id") String wabaId;
+
+    /**
+     * 该接收方收到消息后预估将花费的钱乘10000倍的整数，单位是美元 (预估费用的参数)
+     */
+    @JsonProperty("estimated_cost")
+    Long estimatedCost;
+
+
 }
