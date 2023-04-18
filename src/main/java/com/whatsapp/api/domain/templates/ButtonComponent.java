@@ -2,6 +2,7 @@ package com.whatsapp.api.domain.templates;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.whatsapp.api.domain.templates.type.ComponentType;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
 /**
  * The type Button component.
  */
+@ToString
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ButtonComponent extends Component<ButtonComponent> {
 

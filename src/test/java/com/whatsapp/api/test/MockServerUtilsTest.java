@@ -24,6 +24,7 @@ public class MockServerUtilsTest extends TestUtils {
         baseUrl = String.format("http://localhost:%s", mockWebServer.getPort());
         WhatsappApiConfig.setBaseDomain(baseUrl);
         WhatsappApiConfig.setEngagelabDomain(baseUrl);
+        WhatsappApiConfig.setEngagelabDevDomain(baseUrl);
 
     }
 

@@ -8,6 +8,8 @@ import com.whatsapp.api.domain.response.Response;
 import com.whatsapp.api.domain.templates.MessageTemplate;
 import com.whatsapp.api.domain.templates.response.MessageTemplateIDResponse;
 import com.whatsapp.api.domain.templates.response.Template;
+import com.whatsapp.api.domain.webhook.engaglab.SetWebhook;
+import com.whatsapp.api.domain.webhook.engaglab.SetWebhookResponse;
 import retrofit2.Call;
 import retrofit2.http.*;
 
@@ -66,6 +68,13 @@ public interface WhatsappEngagelabApiService {
     @DELETE("/" + WhatsappApiConfig.ENGAGELAB_API_VERSION + "/templates/{message-template-name}")
     Call<Response> deleteMessageTemplate(@Path("message-template-name") String name);
 
+    /**
+     * 设置回调地址
+     * @param setWebhook                      the setWebhook
+     * @return the call
+     */
+    @POST("/" + WhatsappApiConfig.ENGAGELAB_DEV_API_VERSION + "/webhooks")
+    Call<SetWebhookResponse> webhooks(@Body SetWebhook setWebhook);
 
 
 

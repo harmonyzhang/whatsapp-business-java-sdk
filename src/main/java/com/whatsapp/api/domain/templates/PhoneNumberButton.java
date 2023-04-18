@@ -26,7 +26,7 @@ public class PhoneNumberButton extends Button {
      * Instantiates a new Phone number button.
      */
     protected PhoneNumberButton() {
-
+        super(ButtonType.PHONE_NUMBER, null);
     }
 
     /**
