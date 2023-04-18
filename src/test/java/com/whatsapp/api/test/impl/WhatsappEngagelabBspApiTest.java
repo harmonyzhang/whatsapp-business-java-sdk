@@ -71,7 +71,7 @@ class WhatsappEngagelabBspApiTest extends MockServerUtilsTest {
 
         RecordedRequest recordedRequest = mockWebServer.takeRequest();
         Assertions.assertEquals("POST", recordedRequest.getMethod());
-        Assertions.assertEquals("/" + WhatsappApiConfig.ENGAGELAB_DEV_API_VERSION + "/" + "apikeys", recordedRequest.getPath());
+        Assertions.assertEquals("/whatsapp/" + WhatsappApiConfig.ENGAGELAB_DEV_API_VERSION + "/" + "apikeys", recordedRequest.getPath());
 
         Assertions.assertEquals("hh", response.getDevKey());
 
