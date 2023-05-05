@@ -70,7 +70,7 @@ public class WhatsappBusinessCloudApi {
      */
     public UploadResponse uploadMedia(String phoneNumberId, String fileName, FileType fileType, byte[] file) {
 
-        RequestBody requestFile = MultipartBody.create(file, MediaType.parse(fileType.getType()));
+        RequestBody requestFile = MultipartBody.create(MediaType.parse(fileType.getType()), file);
 
         Part body = Part.createFormData("file", fileName, requestFile);
 
