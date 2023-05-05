@@ -4,12 +4,16 @@ import com.whatsapp.api.domain.messages.engaglab.Message;
 import com.whatsapp.api.domain.messages.engaglab.response.MessageResponse;
 import com.whatsapp.api.domain.response.Response;
 import com.whatsapp.api.domain.templates.MessageTemplate;
+import com.whatsapp.api.domain.templates.response.MediaHandlesResponse;
 import com.whatsapp.api.domain.templates.response.MessageTemplateIDResponse;
 import com.whatsapp.api.domain.templates.response.Template;
 import com.whatsapp.api.domain.webhook.engaglab.SetWebhook;
 import com.whatsapp.api.domain.webhook.engaglab.SetWebhookResponse;
 import com.whatsapp.api.service.WhatsappEngagelabApiService;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 
+import java.io.File;
 import java.util.List;
 
 import static com.whatsapp.api.WhatsappApiServiceGenerator.createServiceBasic;
@@ -104,7 +108,20 @@ public class WhatsappEngagelabApi {
         return executeSync(whatsappEngagelabApiService.webhooks(setWebhook));
     }
 
+    /**
+     * <p>处理模版示例媒体文件</p>
+     *
+     * @param file
+     * @return {@link MediaHandlesResponse}
+     */
+    public MediaHandlesResponse mediaHandles(File file) {
 
+        RequestBody requestFile = MultipartBody.create(file, null);
+
+        MultipartBody.Part body = MultipartBody.Part.createFormData("file", file.getName(), requestFile);
+
+        return executeSync(whatsappEngagelabApiService.mediaHandles(body));
+    }
 
 
 
