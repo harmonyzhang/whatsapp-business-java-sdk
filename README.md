@@ -69,8 +69,8 @@ This sdk implements engagelab whatsapp API version v1.
 ```xml
 <repositories>
 	<repository>
-		<id>jitpack.io</id>
-		<url>https://jitpack.io</url>
+		<id>github</id>
+		<url>https://maven.pkg.github.com/**</url>
 	</repository>
 </repositories>
 ```
@@ -93,7 +93,7 @@ This sdk implements engagelab whatsapp API version v1.
 allprojects {
 	repositories {
 		...
-		maven { url 'https://jitpack.io' }
+		maven { url 'https://maven.pkg.github.com/**' }
 	}
 }
 ```
@@ -102,7 +102,7 @@ allprojects {
 
 ```gradle
 dependencies {
-	implementation 'com.github.harmonyzhang:whatsapp-business-java-sdk:v1.0.0'
+	implementation 'com.github.harmonyzhang:whatsapp-business-java-sdk:v1.0.0-SNAPSHOT'
 }
 ```
 
