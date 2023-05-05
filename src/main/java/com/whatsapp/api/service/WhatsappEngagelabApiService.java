@@ -6,10 +6,12 @@ import com.whatsapp.api.domain.messages.engaglab.Message;
 import com.whatsapp.api.domain.messages.engaglab.response.MessageResponse;
 import com.whatsapp.api.domain.response.Response;
 import com.whatsapp.api.domain.templates.MessageTemplate;
+import com.whatsapp.api.domain.templates.response.MediaHandlesResponse;
 import com.whatsapp.api.domain.templates.response.MessageTemplateIDResponse;
 import com.whatsapp.api.domain.templates.response.Template;
 import com.whatsapp.api.domain.webhook.engaglab.SetWebhook;
 import com.whatsapp.api.domain.webhook.engaglab.SetWebhookResponse;
+import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.*;
 
@@ -77,5 +79,13 @@ public interface WhatsappEngagelabApiService {
     Call<SetWebhookResponse> webhooks(@Body SetWebhook setWebhook);
 
 
-
+    /**
+     * <p>处理模版示例媒体文件</p>
+     *
+     * @param body
+     * @return {@link Call<MediaHandlesResponse>}
+     */
+    @Multipart
+    @POST("/" + WhatsappApiConfig.ENGAGELAB_DEV_API_VERSION + "/media/handles")
+    Call<MediaHandlesResponse> mediaHandles(@Part MultipartBody.Part body);
 }

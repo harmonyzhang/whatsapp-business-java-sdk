@@ -2,6 +2,7 @@ package com.whatsapp.api.test.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.whatsapp.api.domain.templates.response.MediaHandlesResponse;
 import com.whatsapp.api.test.MockServerUtilsTest;
 import com.whatsapp.api.test.TestConstants;
 import com.whatsapp.api.WhatsappApiFactory;
@@ -28,6 +29,7 @@ import mockwebserver3.RecordedRequest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Arrays;
@@ -497,7 +499,23 @@ class WhatsappEngagelabApiTest extends MockServerUtilsTest {
     }
 
 
+    /**
+     * Method under test: {@link WhatsappEngagelabApi#mediaHandles(File)}
+     */
+    @Test
+    void testMediaHandles() throws IOException, URISyntaxException {
+        WhatsappApiFactory factory = WhatsappApiFactory.newInstance();
 
+        WhatsappEngagelabApi whatsappEngagelabApi = factory.newEngagelabApi(TestConstants.ENGAGELAB_DEV_KEY,TestConstants.ENGAGELAB_DEV_SECRET);
+
+        mockWebServer.enqueue(new MockResponse().setResponseCode(200).setBody(fromResource("/engagelab/mediaHandles.json")));
+        String path = this.getClass().getResource("/starwars.png").getPath();
+        File file = new File(path);
+        MediaHandlesResponse mediaHandlesResponse = whatsappEngagelabApi.mediaHandles(file);
+
+        Assertions.assertEquals("4::aW1hZ2UvanBlZw==:ARb2JGd8LbvJbfmpMASFAlczcn4hxLC6tkwjasjD4WL6_i34tIisq0IdWNFFFj1KwJMRXPU4xwygHSJd4DHu1f19LcBBl2qeb8EuEcgnIUPYIQ:e:1682169041:4985146461608173:100084026087657:ARazr9kxfzKshJE4WpY", mediaHandlesResponse.getHandleId());
+
+    }
 
 
 
