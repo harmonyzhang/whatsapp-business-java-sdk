@@ -4,7 +4,7 @@
 
     <groupId>com.github.harmonyzhang</groupId>
     <artifactId>whatsapp-business-java-sdk</artifactId>
-    <version>v1.0.1</version>
+    <version>v1.0.0-SNAPSHOT</version>
     <licenses>
         <license>
             <name>The MIT License</name>
