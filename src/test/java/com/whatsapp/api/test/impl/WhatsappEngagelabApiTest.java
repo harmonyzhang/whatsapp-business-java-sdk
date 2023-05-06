@@ -32,6 +32,7 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -500,7 +501,7 @@ class WhatsappEngagelabApiTest extends MockServerUtilsTest {
 
 
     /**
-     * Method under test: {@link WhatsappEngagelabApi#mediaHandles(File)}
+     * Method under test: {@link WhatsappEngagelabApi#mediaHandles(String, byte[])}
      */
     @Test
     void testMediaHandles() throws IOException, URISyntaxException {
@@ -511,7 +512,8 @@ class WhatsappEngagelabApiTest extends MockServerUtilsTest {
         mockWebServer.enqueue(new MockResponse().setResponseCode(200).setBody(fromResource("/engagelab/mediaHandles.json")));
         String path = this.getClass().getResource("/starwars.png").getPath();
         File file = new File(path);
-        MediaHandlesResponse mediaHandlesResponse = whatsappEngagelabApi.mediaHandles(file);
+        byte[] bytes = Files.readAllBytes(file.toPath());
+        MediaHandlesResponse mediaHandlesResponse = whatsappEngagelabApi.mediaHandles("starwars.png", bytes);
 
         Assertions.assertEquals("4::aW1hZ2UvanBlZw==:ARb2JGd8LbvJbfmpMASFAlczcn4hxLC6tkwjasjD4WL6_i34tIisq0IdWNFFFj1KwJMRXPU4xwygHSJd4DHu1f19LcBBl2qeb8EuEcgnIUPYIQ:e:1682169041:4985146461608173:100084026087657:ARazr9kxfzKshJE4WpY", mediaHandlesResponse.getHandleId());
 
