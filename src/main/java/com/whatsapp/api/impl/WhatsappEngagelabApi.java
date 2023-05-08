@@ -114,11 +114,11 @@ public class WhatsappEngagelabApi {
      * @param file
      * @return {@link MediaHandlesResponse}
      */
-    public MediaHandlesResponse mediaHandles(File file) {
+    public MediaHandlesResponse mediaHandles(String fileName, byte[] file) {
 
-        RequestBody requestFile = MultipartBody.create(file, null);
+        RequestBody requestFile = MultipartBody.create(null, file);
 
-        MultipartBody.Part body = MultipartBody.Part.createFormData("file", file.getName(), requestFile);
+        MultipartBody.Part body = MultipartBody.Part.createFormData("file", fileName, requestFile);
 
         return executeSync(whatsappEngagelabApiService.mediaHandles(body));
     }

@@ -6,25 +6,25 @@
 [![Javadoc](https://github.com/harmonyzhang/whatsapp-business-java-sdk/actions/workflows/javadoc.yml/badge.svg)](https://github.com/harmonyzhang/whatsapp-business-java-sdk/actions/workflows/javadoc.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**English** | [中文](./README.zh-CN.md)
+[English](./README.md) | **中文**
 
-Whatsapp business api SDK, written in java. This SDK implements the Official [Whatsapp Cloud API](https://developers.facebook.com/docs/whatsapp/cloud-api) and [WhatsApp Business Management API](https://developers.facebook.com/docs/whatsapp/business-management-api) and [Engagelab Whatsapp API](https://jiguang-docs.yuque.com/te6n14/whatsapp.engagelab/birhgucglgdgqc6c). These allows you to:
-- manage your WhatsApp Business Account assets, such as message templates and phone numbers;
-- send messages to your contacts, such as simple text messages, messages with buttons, video, images, sticker...
-- upload, delete and retrieve media files.
-- receive webhooks events
+Whatsapp商业api SDK, 用java编写。这个SDK实现了官方 [Whatsapp Cloud API](https://developers.facebook.com/docs/whatsapp/cloud-api) 和 [WhatsApp Business Management API](https://developers.facebook.com/docs/whatsapp/business-management-api) 和 [极光 Whatsapp API](https://jiguang-docs.yuque.com/te6n14/whatsapp.engagelab/birhgucglgdgqc6c). 这些允许你:
+- 管理您的WhatsApp商业帐户资产，如消息模板和电话号码;
+- 发送消息给您的联系人，如简单的短信，消息与按钮，视频，图像，贴纸…
+- 上传，删除和检索媒体文件。
+- 接收webhook事件。
 
-The WhatsApp Business API allows medium and large businesses to communicate with their customers at scale. Using the API, businesses can build systems that connect thousands of customers with agents or bots, enabling both programmatic and manual communication. Additionally, you can integrate the API with numerous backend systems, such as CRM and marketing platforms.
+WhatsApp商业API允许中小型和大型企业与客户进行大规模沟通、群发。使用API，企业可以构建将成千上万的客户与代理或机器人连接起来的系统，从而实现编程和手动通信。此外，您可以将API与许多后端系统集成，例如CRM和营销平台。
 
-This sdk implements whatsapp business cloud api version v16.0. [See api changelog](https://developers.facebook.com/docs/whatsapp/business-platform/changelog)
+官方新推出的Cloud API使得任何一家企业都能方便的申请到属于自己的商业Whatsapp账号。
 
-This sdk implements engagelab whatsapp API version v1.
+此sdk实现whatsapp business cloud api 的v16.0版本、极光Whatsapp API 的v1版本。
 
-:warning: This project is still under construction. Contributions are welcome.
+:warning:该项目仍在建设中。欢迎投稿。
 
 ---
 																     
-## :link: Links:
+## :link: 链接:
 
 - [:hammer_and_wrench: Installation](#hammer_and_wrench-installation)
 	- [Maven](#maven)
@@ -60,13 +60,13 @@ This sdk implements engagelab whatsapp API version v1.
 ---
 
 
-## :hammer_and_wrench: Installation
+## :hammer_and_wrench: 安装
 
-:warning: this library is compatible with **java 1.8+**.
+:warning: 这个库兼容 **java 1.8+**.
 
 ### Maven
 
-**1. Add the [JitPack](https://jitpack.io/#harmonyzhang/whatsapp-business-java-sdk) repository to your build file:**
+**1. 添加 [JitPack](https://jitpack.io/#harmonyzhang/whatsapp-business-java-sdk) 存储库到您的构建文件:**
 
 ```xml
 <repositories>
@@ -77,7 +77,7 @@ This sdk implements engagelab whatsapp API version v1.
 </repositories>
 ```
 
-**2. Add the following Maven dependency to your project's `pom.xml`:**
+**2. 将以下Maven依赖项添加到项目中 `pom.xml`:**
 
 ```xml
 <dependency>
@@ -89,7 +89,7 @@ This sdk implements engagelab whatsapp API version v1.
 
 ### Gradle:
 
-**1. Add it in your root build.gradle at the end of repositories:**
+**1. 将它添加到 build.gradle 仓库的末尾:**
 
 ```gradle
 allprojects {
@@ -100,7 +100,7 @@ allprojects {
 }
 ```
 
-**2. Add the dependency**
+**2. 添加依赖项**
 
 ```gradle
 dependencies {
@@ -108,9 +108,9 @@ dependencies {
 }
 ```
 
-**3. Install library into your Maven's local repository by running `mvn install`**
+**3. 将库安装到Maven的本地存储库中 `mvn install`**
 
-Alternatively, you can clone this repository and run the [examples](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/examples).
+或者，您可以克隆此存储库并运行 [示例](https://github.com/harmonyzhang/whatsapp-business-java-sdk/tree/main/src/test/java/com/whatsapp/api/examples).
 
 [:arrow_heading_up: back](#link-links)
 
