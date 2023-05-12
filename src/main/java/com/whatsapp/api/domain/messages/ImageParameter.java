@@ -10,30 +10,24 @@ import com.whatsapp.api.domain.messages.type.ParameterType;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ImageParameter extends Parameter {
 
-    @JsonProperty("link")
-    private String link;
-    @JsonProperty("caption")
-    private String caption;
-
+    @JsonProperty("image")
+    private Media image;
 
     /**
      * Instantiates a new Image parameter.
      *
-     * @param link the link
-     * @param caption the caption
+     * @param image image
      */
-    public ImageParameter(String link, String caption) {
+    public ImageParameter(Media image) {
         super(ParameterType.IMAGE);
-        this.link = link;
-        this.caption = caption;
+        this.image = image;
     }
 
-    public String getLink() {
-        return link;
+    public Media getImage() {
+        return image;
     }
 
-    public String getCaption() {
-        return caption;
+    public void setImage(Media image) {
+        this.image = image;
     }
-
 }

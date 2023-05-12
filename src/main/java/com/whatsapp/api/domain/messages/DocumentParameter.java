@@ -10,37 +10,25 @@ import com.whatsapp.api.domain.messages.type.ParameterType;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DocumentParameter extends Parameter {
 
-    @JsonProperty("link")
-    private String link;
-    @JsonProperty("caption")
-    private String caption;
-    @JsonProperty("filename")
-    private String filename;
+    @JsonProperty("document")
+    private Media document;
 
 
     /**
      * Instantiates a new Document parameter.
      *
-     * @param link the link
-     * @param caption the caption
-     * @param filename the filename
+     * @param document document
      */
-    public DocumentParameter(String link, String caption, String filename) {
-        super(ParameterType.IMAGE);
-        this.link = link;
-        this.caption = caption;
-        this.filename = filename;
+    public DocumentParameter(Media document) {
+        super(ParameterType.DOCUMENT);
+        this.document = document;
     }
 
-    public String getLink() {
-        return link;
+    public Media getDocument() {
+        return document;
     }
 
-    public String getCaption() {
-        return caption;
-    }
-
-    public String getFilename() {
-        return filename;
+    public void setDocument(Media document) {
+        this.document = document;
     }
 }
