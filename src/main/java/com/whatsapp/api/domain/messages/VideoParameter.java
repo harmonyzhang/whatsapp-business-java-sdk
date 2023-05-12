@@ -10,30 +10,24 @@ import com.whatsapp.api.domain.messages.type.ParameterType;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VideoParameter extends Parameter {
 
-    @JsonProperty("link")
-    private String link;
-    @JsonProperty("caption")
-    private String caption;
-
+    @JsonProperty("video")
+    private Media video;
 
     /**
      * Instantiates a new Video parameter.
      *
-     * @param link the link
-     * @param caption the caption
+     * @param video video
      */
-    public VideoParameter(String link, String caption) {
-        super(ParameterType.IMAGE);
-        this.link = link;
-        this.caption = caption;
+    public VideoParameter(Media video) {
+        super(ParameterType.VIDEO);
+        this.video = video;
     }
 
-    public String getLink() {
-        return link;
+    public Media getVideo() {
+        return video;
     }
 
-    public String getCaption() {
-        return caption;
+    public void setVideo(Media video) {
+        this.video = video;
     }
-
 }
