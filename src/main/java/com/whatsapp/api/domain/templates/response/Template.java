@@ -33,6 +33,7 @@ public class Template{
     @JsonProperty("updated_time")
     Date updatedTime;
 
+    @JsonProperty("reason") String reason;
 
 
 
