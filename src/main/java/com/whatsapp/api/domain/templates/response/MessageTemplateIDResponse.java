@@ -12,4 +12,6 @@ import lombok.Data;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MessageTemplateIDResponse {
     @JsonProperty("template_id") String id;
+
+    @JsonProperty("status") String status;
 }
