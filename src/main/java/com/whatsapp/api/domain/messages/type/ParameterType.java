@@ -11,6 +11,18 @@ public enum ParameterType {
      */
     TEXT("text"),
     /**
+     * Image parameter type.
+     */
+    IMAGE("image"),
+    /**
+     * Video parameter type.
+     */
+    VIDEO("video"),
+    /**
+     * Document parameter type.
+     */
+    DOCUMENT("document"),
+    /**
      * Currency parameter type.
      */
     CURRENCY("currency"),
