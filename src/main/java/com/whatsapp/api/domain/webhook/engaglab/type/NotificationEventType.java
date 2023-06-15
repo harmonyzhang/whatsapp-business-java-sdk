@@ -17,6 +17,11 @@ public enum NotificationEventType {
      * 预估费用
      */
     @JsonProperty("whatsapp_bsp_delivery_estimate_cost")
-    ESTIMATE_COST
+    ESTIMATE_COST,
 
+    /**
+     * 预估费用
+     */
+    @JsonProperty("delivery_estimate_cost")
+    DELIVERY_ESTIMATE_COST
 }
