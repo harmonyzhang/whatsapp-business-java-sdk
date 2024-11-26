@@ -52,7 +52,10 @@ public enum MessageStatus {
     /**
      * 该号码在传递的「收件人号码」内，即为该号码记录1个计划发送目标的状态
      */
-    PLAN("plan");
+    PLAN("plan"),
+
+
+    DELIVERED_TIMEOUT("delivered_timeout");
 
     private final String value;
 
