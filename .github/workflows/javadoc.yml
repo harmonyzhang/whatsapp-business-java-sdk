@@ -19,7 +19,7 @@ jobs:
       - run: |
           download_url="https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u172-b11/OpenJDK8_x64_Linux_jdk8u172-b11.tar.gz"
           wget -O $RUNNER_TEMP/java_package.tar.gz $download_url
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: javadoc
