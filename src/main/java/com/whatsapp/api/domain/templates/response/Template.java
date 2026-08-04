@@ -35,6 +35,7 @@ public class Template{
 
     @JsonProperty("reason") String reason;
 
-
+    @JsonProperty("tags")
+    List<Object> tags;
 
 }
